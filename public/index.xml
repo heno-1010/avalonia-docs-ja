@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Avalonia Docs JP – Avalonia Docs JP</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Avalonia Docs JP</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    
+	  <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+      
+    
+    
+  </channel>
+</rss>
