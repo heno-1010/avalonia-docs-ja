@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>Welcome</title>
+      <title></title>
       <link>http://localhost:1313/docs/welcome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -23,7 +23,94 @@
       <description>
         
         
-        &lt;p&gt;Welcome to Avalonia Docs&lt;/p&gt;
+        &lt;h1&gt;Welcome&lt;/h1&gt;&lt;p&gt;Avaloniaのドキュメントへようこそ！&lt;br&gt;
+初めてのアプリ開発でも、既存プロジェクトの移行であっても、このドキュメントではインストールからデプロイに至るまで、すべての手順をカバーしています。&lt;/p&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:flex-col hx:rounded-lg hx:border hx:py-4 hx:px-4 hx:border-gray-200 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200&#34;&gt;
+  &lt;p class=&#34;hx:flex hx:items-center hx:font-medium&#34;&gt;&lt;svg height=16px class=&#34;hx:inline-block hx:align-middle hx:mr-2&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z&#34;/&gt;&lt;/svg&gt;Info&lt;/p&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;p&gt;このドキュメントは、Avalonia 12を対象としています。&lt;br&gt;
+Avalonia 11のドキュメントについては、&lt;a href=&#34;https://v11.docs.avaloniaui.net/&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;v11.docs.avaloniaui.net&lt;/a&gt;をご覧ください。&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Avaloniaとは？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avaloniaとは&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avalonia%e3%81%a8%e3%81%af&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Avaloniaは、.NETでアプリケーションを構築するための、オープンソースのクロスプラットフォームUIフレームワークです。&lt;br&gt;
+独自のレンダリングエンジンを使用してコントロールを描画するため、どのプラットフォームでもアプリの見た目や動作が統一されます。&lt;br&gt;
+XAMLとC#またはF#を使って一度開発すれば、以下のプラットフォームに対応します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt; (10, 11)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt; (Apple Silicon および Intel)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Desktop Linux&lt;/strong&gt; (X11 および Wayland)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embedded Linux&lt;/strong&gt; (Raspberry Piなどのデバイスでのフレームバッファ)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iOS&lt;/strong&gt; および &lt;strong&gt;Android&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WebAssembly&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;正確なバージョンやアーキテクチャの詳細については、「Supported platforms」を参照してください。&lt;/p&gt;
+&lt;h2&gt;主な機能&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;主な機能&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%bb%e3%81%aa%e6%a9%9f%e8%83%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;機能&lt;/th&gt;
+          &lt;th&gt;概要&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;クロスプラットフォーム・レンダリング&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Avalonia独自のレンダリングエンジンにより、すべてのプラットフォームで同一の出力（表示結果）を生成します。デフォルトのバックエンドには、Skiaを採用しているほか、開発チームはGoogleのFlutterチームと協力して、Impellerレンダリングエンジンを.NETへ導入する取り組みを進めています。ネイティブコントロールのラッパーを使用していないため、プラットフォーム固有の挙動（癖）に悩まされることはありません。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;XAMLとコードビハインド&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;XAMLを使って宣言的にUIを記述することも、コードのみで構築することも可能です。WPFやUWPの経験があれば、AvaloniaのXAMLは非常に馴染み深く感じられるでしょう。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;スタイリングシステム&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;セレクター、スタイルクラス、疑似クラス、コントロールテーマを備えた、CSSに影響を受けたスタイリングシステムです。詳細は「Styles」を参照してください。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;データバインディング&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;ビルド時に検証されるコンパイル済みバインディングに加え、完全なMVVMサポートおよび CommunityToolkit.Mvvm との統合を提供します。詳細は「Data binding」を参照してください。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;豊富なコントロールライブラリ&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;DataGrid、TreeView、TabControl、Calendarなどを含む、60以上の組み込みコントロールを用意しています。これらはすべて、スタイルの変更やテンプレート化が可能です。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;アクセシビリティ&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;プラットフォームを跨いで利用できる、スクリーンリーダー（音声読み上げ）やキーボードナビゲーションのサポートが組み込まれています。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;DevTools&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;実行中に F12 キーを押すことで、ビジュアルツリー、プロパティ、スタイル、レイアウトを確認できます。&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;進め方を選ぶ&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;進め方を選ぶ&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e9%80%b2%e3%82%81%e6%96%b9%e3%82%92%e9%81%b8%e3%81%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Avaloniaは初めてですか？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avaloniaは初めてですか&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avalonia%e3%81%af%e5%88%9d%e3%82%81%e3%81%a6%e3%81%a7%e3%81%99%e3%81%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/get-started/install-avalonia&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Avaloniaのインストール&lt;/a&gt;と&lt;a href=&#34;https://docs.avaloniaui.net/docs/get-started/set-up-your-ide&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IDE（開発環境）の設定&lt;/a&gt;を行う&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/get-started/create-your-first-project&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;初めてのプロジェクトを作成する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/get-started/starter-tutorial&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;チュートリアル&lt;/a&gt;に従って、温度変換アプリを構築する&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/fundamentals/avalonia-xaml&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;XAML、コントロール、レイアウト、ビジュアルツリーなどの基本を学ぶ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;WPFの経験がありますか？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;wpfの経験がありますか&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#wpf%e3%81%ae%e7%b5%8c%e9%a8%93%e3%81%8c%e3%81%82%e3%82%8a%e3%81%be%e3%81%99%e3%81%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/migration/wpf&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WPF移行ガイド&lt;/a&gt;：セクションごとの詳細な比較&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/migration/wpf/cheat-sheet&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WPFチートシート&lt;/a&gt;：WPFの主要な概念とAvaloniaにおける対応機能の簡易マッピング&lt;br&gt;
+既存のWPFアプリケーションを大きく書き換えることなくクロスプラットフォームで実行する必要がある場合は、Avalonia XPFを使用することで、Avaloniaのレンダリングエンジン上でバイナリ互換性のあるWPFサポートを利用できます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Avalonia 11からのアップグレードですか？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avalonia-11からのアップグレードですか&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avalonia-11%e3%81%8b%e3%82%89%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%82%b0%e3%83%ac%e3%83%bc%e3%83%89%e3%81%a7%e3%81%99%e3%81%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Avalonia 12では、デフォルトでのコンパイル済みバインディングの有効化、新しいクリップボードAPI、更新されたウィンドウデコレーションなどが含まれています。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/avalonia12-breaking-changes&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Avalonia 12における破壊的変更&lt;/a&gt;：各変更に対する移行ガイドを含む完全な一覧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;サンプルをお探しですか？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;サンプルをお探しですか&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab%e3%82%92%e3%81%8a%e6%8e%a2%e3%81%97%e3%81%a7%e3%81%99%e3%81%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/samples-tutorials&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サンプルとチュートリアル&lt;/a&gt;：スターターアプリ、実践的な実例、およびビデオ解説&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;お困りですか？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;お困りですか&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e3%81%8a%e5%9b%b0%e3%82%8a%e3%81%a7%e3%81%99%e3%81%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;もし行き詰まった場合は、&lt;a href=&#34;https://docs.avaloniaui.net/troubleshooting&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;トラブルシューティング&lt;/a&gt;を確認するか、GitHub Discussions のコミュニティで質問してみてください。&lt;br&gt;
+また、バグを報告する際は、GithubでIssueを作成してください。&lt;/p&gt;
 
       </description>
     </item>

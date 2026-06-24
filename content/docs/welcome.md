@@ -1,7 +1,59 @@
 ---
-title: Welcome
 type: docs
 weight: 1
 ---
+# Welcome
+Avaloniaのドキュメントへようこそ！  
+初めてのアプリ開発でも、既存プロジェクトの移行であっても、このドキュメントではインストールからデプロイに至るまで、すべての手順をカバーしています。
 
-Welcome to Avalonia Docs
+> [!INFO]
+> このドキュメントは、Avalonia 12を対象としています。  
+> Avalonia 11のドキュメントについては、[v11.docs.avaloniaui.net](https://v11.docs.avaloniaui.net/)をご覧ください。
+
+## Avaloniaとは？
+Avaloniaは、.NETでアプリケーションを構築するための、オープンソースのクロスプラットフォームUIフレームワークです。  
+独自のレンダリングエンジンを使用してコントロールを描画するため、どのプラットフォームでもアプリの見た目や動作が統一されます。  
+XAMLとC#またはF#を使って一度開発すれば、以下のプラットフォームに対応します。  
+
+- **Windows** (10, 11)
+- **macOS** (Apple Silicon および Intel)
+- **Desktop Linux** (X11 および Wayland)
+- **Embedded Linux** (Raspberry Piなどのデバイスでのフレームバッファ)
+- **iOS** および **Android**
+- **WebAssembly**  
+
+正確なバージョンやアーキテクチャの詳細については、「Supported platforms」を参照してください。
+
+## 主な機能
+| 機能 | 概要 |
+|---|---|
+| **クロスプラットフォーム・レンダリング** | Avalonia独自のレンダリングエンジンにより、すべてのプラットフォームで同一の出力（表示結果）を生成します。デフォルトのバックエンドには、Skiaを採用しているほか、開発チームはGoogleのFlutterチームと協力して、Impellerレンダリングエンジンを.NETへ導入する取り組みを進めています。ネイティブコントロールのラッパーを使用していないため、プラットフォーム固有の挙動（癖）に悩まされることはありません。 |
+| **XAMLとコードビハインド** | XAMLを使って宣言的にUIを記述することも、コードのみで構築することも可能です。WPFやUWPの経験があれば、AvaloniaのXAMLは非常に馴染み深く感じられるでしょう。 |
+| **スタイリングシステム** | セレクター、スタイルクラス、疑似クラス、コントロールテーマを備えた、CSSに影響を受けたスタイリングシステムです。詳細は「Styles」を参照してください。 |
+| **データバインディング** | ビルド時に検証されるコンパイル済みバインディングに加え、完全なMVVMサポートおよび CommunityToolkit.Mvvm との統合を提供します。詳細は「Data binding」を参照してください。 |
+| **豊富なコントロールライブラリ** | DataGrid、TreeView、TabControl、Calendarなどを含む、60以上の組み込みコントロールを用意しています。これらはすべて、スタイルの変更やテンプレート化が可能です。 |
+| **アクセシビリティ** | プラットフォームを跨いで利用できる、スクリーンリーダー（音声読み上げ）やキーボードナビゲーションのサポートが組み込まれています。 |
+| **DevTools** | 実行中に F12 キーを押すことで、ビジュアルツリー、プロパティ、スタイル、レイアウトを確認できます。 |
+
+## 進め方を選ぶ
+### Avaloniaは初めてですか？
+- [Avaloniaのインストール](https://docs.avaloniaui.net/docs/get-started/install-avalonia)と[IDE（開発環境）の設定](https://docs.avaloniaui.net/docs/get-started/set-up-your-ide)を行う
+- [初めてのプロジェクトを作成する](https://docs.avaloniaui.net/docs/get-started/create-your-first-project)
+- [チュートリアル](https://docs.avaloniaui.net/docs/get-started/starter-tutorial)に従って、温度変換アプリを構築する
+- [XAML、コントロール、レイアウト、ビジュアルツリーなどの基本を学ぶ](https://docs.avaloniaui.net/docs/fundamentals/avalonia-xaml)
+
+### WPFの経験がありますか？
+- [WPF移行ガイド](https://docs.avaloniaui.net/docs/migration/wpf)：セクションごとの詳細な比較
+- [WPFチートシート](https://docs.avaloniaui.net/docs/migration/wpf/cheat-sheet)：WPFの主要な概念とAvaloniaにおける対応機能の簡易マッピング  
+既存のWPFアプリケーションを大きく書き換えることなくクロスプラットフォームで実行する必要がある場合は、Avalonia XPFを使用することで、Avaloniaのレンダリングエンジン上でバイナリ互換性のあるWPFサポートを利用できます。
+
+### Avalonia 11からのアップグレードですか？
+Avalonia 12では、デフォルトでのコンパイル済みバインディングの有効化、新しいクリップボードAPI、更新されたウィンドウデコレーションなどが含まれています。
+- [Avalonia 12における破壊的変更](https://docs.avaloniaui.net/docs/avalonia12-breaking-changes)：各変更に対する移行ガイドを含む完全な一覧
+
+### サンプルをお探しですか？
+- [サンプルとチュートリアル](https://docs.avaloniaui.net/docs/samples-tutorials)：スターターアプリ、実践的な実例、およびビデオ解説
+
+## お困りですか？
+もし行き詰まった場合は、[トラブルシューティング](https://docs.avaloniaui.net/troubleshooting)を確認するか、GitHub Discussions のコミュニティで質問してみてください。  
+また、バグを報告する際は、GithubでIssueを作成してください。
