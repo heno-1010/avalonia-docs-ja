@@ -27,3 +27,10 @@
 
 ## 🔄 更新について
 公式ドキュメントの更新にできる限り追従していますが、反映には時間差があります。
+
+## ⚖️ ライセンスについて
+
+本サイトで翻訳している原文の著作権は AvaloniaUI に帰属します。
+また、本翻訳プロジェクトは Avalonia UI 本体と同様のライセンス（MIT License）に従って公開されています。
+
+- 原本のライセンス（MIT License）の詳細は、Avalonia UI 本体の[LICENSEファイル](https://github.com/AvaloniaUI/Avalonia/blob/master/licence.md)をご確認ください。
