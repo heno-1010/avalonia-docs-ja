@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Avalonia Docs JP – Getting started</title>
+    <title>Avalonia Docs JP – </title>
     <link>http://localhost:1313/docs/getting-started/</link>
-    <description>Recent content in Getting started on Avalonia Docs JP</description>
+    <description>Recent content on Avalonia Docs JP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
@@ -24,6 +24,45 @@
         
         
         
+      </description>
+    </item>
+    
+    <item>
+      <title>Set up your IDE</title>
+      <link>http://localhost:1313/docs/getting-started/set-up-your-ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/getting-started/set-up-your-ide/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Create your first project</title>
+      <link>http://localhost:1313/docs/getting-started/create-your-first-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/getting-started/create-your-first-project/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs/getting-started/starter-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/getting-started/starter-tutorial/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;スターターチュートリアル&lt;/h1&gt;
       </description>
     </item>
     

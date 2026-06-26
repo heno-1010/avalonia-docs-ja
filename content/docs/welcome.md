@@ -11,8 +11,8 @@ Avaloniaのドキュメントへようこそ！
 > Avalonia 11のドキュメントについては、[v11.docs.avaloniaui.net](https://v11.docs.avaloniaui.net/)をご覧ください。
 
 ## Avaloniaとは？
-Avaloniaは、.NETでアプリケーションを構築するための、オープンソースのクロスプラットフォームUIフレームワークです。  
-独自のレンダリングエンジンを使用してコントロールを描画するため、どのプラットフォームでもアプリの見た目や動作が統一されます。  
+Avaloniaは、.NET向けのオープンソースのクロスプラットフォームUIフレームワークです。  
+独自のレンダリングエンジンを使用してコントロールを描画するため、どのプラットフォームでも同じ見た目と動作を実現できます。
 XAMLとC#またはF#を使って一度開発すれば、以下のプラットフォームに対応します。  
 
 - **Windows** (10, 11)
@@ -22,7 +22,7 @@ XAMLとC#またはF#を使って一度開発すれば、以下のプラットフ
 - **iOS** および **Android**
 - **WebAssembly**  
 
-正確なバージョンやアーキテクチャの詳細については、「Supported platforms」を参照してください。
+正確なバージョンやアーキテクチャの詳細については、[Supported platforms](/docs/supported-platforms/)を参照してください。
 
 ## 主な機能
 | 機能 | 概要 |
@@ -37,22 +37,22 @@ XAMLとC#またはF#を使って一度開発すれば、以下のプラットフ
 
 ## 進め方を選ぶ
 ### Avaloniaは初めてですか？
-- [Avaloniaのインストール](https://docs.avaloniaui.net/docs/get-started/install-avalonia)と[IDE（開発環境）の設定](https://docs.avaloniaui.net/docs/get-started/set-up-your-ide)を行う
-- [初めてのプロジェクトを作成する](https://docs.avaloniaui.net/docs/get-started/create-your-first-project)
-- [チュートリアル](https://docs.avaloniaui.net/docs/get-started/starter-tutorial)に従って、温度変換アプリを構築する
-- [XAML、コントロール、レイアウト、ビジュアルツリーなどの基本を学ぶ](https://docs.avaloniaui.net/docs/fundamentals/avalonia-xaml)
+- [Avaloniaのインストール](/docs/getting-started/install-avalonia/)と[IDE（開発環境）の設定](/docs/getting-started/set-up-your-ide/)を行う
+- [初めてのプロジェクトを作成する](/docs/getting-started/create-your-first-project/)
+- [チュートリアル](/docs/getting-started/starter-tutorial/)に従って、温度変換アプリを構築する
+- [XAML、コントロール、レイアウト、ビジュアルツリーなどの基本を学ぶ](/docs/)
 
 ### WPFの経験がありますか？
-- [WPF移行ガイド](https://docs.avaloniaui.net/docs/migration/wpf)：セクションごとの詳細な比較
-- [WPFチートシート](https://docs.avaloniaui.net/docs/migration/wpf/cheat-sheet)：WPFの主要な概念とAvaloniaにおける対応機能の簡易マッピング  
+- [WPF移行ガイド](/docs/)：セクションごとの詳細な比較
+- [WPFチートシート](/docs/)：WPFの主要な概念とAvaloniaにおける対応機能の簡易マッピング  
 既存のWPFアプリケーションを大きく書き換えることなくクロスプラットフォームで実行する必要がある場合は、Avalonia XPFを使用することで、Avaloniaのレンダリングエンジン上でバイナリ互換性のあるWPFサポートを利用できます。
 
 ### Avalonia 11からのアップグレードですか？
 Avalonia 12では、デフォルトでのコンパイル済みバインディングの有効化、新しいクリップボードAPI、更新されたウィンドウデコレーションなどが含まれています。
-- [Avalonia 12における破壊的変更](https://docs.avaloniaui.net/docs/avalonia12-breaking-changes)：各変更に対する移行ガイドを含む完全な一覧
+- [Avalonia 12における破壊的変更](/docs/)：各変更に対する移行ガイドを含む完全な一覧
 
 ### サンプルをお探しですか？
-- [サンプルとチュートリアル](https://docs.avaloniaui.net/docs/samples-tutorials)：スターターアプリ、実践的な実例、およびビデオ解説
+- [サンプルとチュートリアル](/docs/)：スターターアプリ、実践的な実例、およびビデオ解説
 
 ## お困りですか？
 もし行き詰まった場合は、[トラブルシューティング](https://docs.avaloniaui.net/troubleshooting)を確認するか、GitHub Discussions のコミュニティで質問してみてください。  
