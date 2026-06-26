@@ -115,5 +115,340 @@ XAMLとC#またはF#を使って一度開発すれば、以下のプラットフ
       </description>
     </item>
     
+    <item>
+      <title>Install Avalonia</title>
+      <link>http://localhost:1313/docs/getting-started/install-avalonia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/getting-started/install-avalonia/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs/supported-platforms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/supported-platforms/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;対応プラットフォーム&lt;/h1&gt;&lt;p&gt;Avaloniaアプリは、Windows, macOS, Linux, iOS, Android, WebAssemblyを作ることができます。&lt;br&gt;
+サポートのレベルは、オペレーティングシステムのバージョンによって異なり、3つのティア（Tier）に分類されています。&lt;br&gt;
+これらのティアは、Avaloniaのメジャーリリースごとに見直されるため、時間の経過と共にティアが移行する場合があります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tier 1: 完全なテストとサポート&lt;/strong&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;全てのリリースにおいてテストが実施されます。このプラットフォームで発生したバグは修正され、コミュニティからのプルリクエスト（PR）も積極的にレビューされ、マージされます。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tier 2: ベストエフォート&lt;/strong&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;自動テストの対象（テストマトリクス）には含まれていませんが、ベストエフォート（最大限の努力）で動作が維持されます。Issueの優先順位はティア1の作業よりも低く設定されるため、一部の問題は修正されない可能性があります。コミュニティからのPRはケースバイケースで評価され、メンテナンスの負担が大きい場合は、商用サポートによる支援が必要になる場合があります。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tier 3: 商用サポートのみ&lt;/strong&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;Tier 1、Tier 2に含まれていないすべてのプラットフォームが対象です。Issueはクローズされ、PRのレビューは行われません。このプラットフォームでAvaloniaを使用する必要がある場合は、「Enhanced Support」を参照してください。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h2&gt;Windows&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;windows&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#windows&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Avaloniaは、Windows上でWin32 APIを直接使用します。.NET SDK以外に、追加のワークロードや依存関係は必要ありません。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;バージョン&lt;/th&gt;
+          &lt;th&gt;最小ビルド&lt;/th&gt;
+          &lt;th&gt;アーキテクチャ&lt;/th&gt;
+          &lt;th&gt;ティア&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows11&lt;/td&gt;
+          &lt;td&gt;24H2 (build 26100)&lt;/td&gt;
+          &lt;td&gt;x64, ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows11&lt;/td&gt;
+          &lt;td&gt;22H2 (build 22621)&lt;/td&gt;
+          &lt;td&gt;x64, ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows 10&lt;/td&gt;
+          &lt;td&gt;22H2 (build 19045)&lt;/td&gt;
+          &lt;td&gt;x64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Windows 10 / 11&lt;/td&gt;
+          &lt;td&gt;以前のビルド&lt;/td&gt;
+          &lt;td&gt;x64, x86&lt;/td&gt;
+          &lt;td&gt;Tier 3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;WinFormsの相互運用（interop）やその他のWindows固有の機能については、「Windows platform guide」を参照してください。&lt;/p&gt;
+&lt;h2&gt;macOS&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;macos&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#macos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Avaloniaは、独自のネイティブObjective-C++ バックエンドを搭載しており、標準の .NET macOS ワークロードは使用しません。そのため、Windows や Linux から macOS アプリをクロスコンパイルすることができます。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;バージョン&lt;/th&gt;
+          &lt;th&gt;名前&lt;/th&gt;
+          &lt;th&gt;アーキテクチャ&lt;/th&gt;
+          &lt;th&gt;ティア&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS 26&lt;/td&gt;
+          &lt;td&gt;Tahoe&lt;/td&gt;
+          &lt;td&gt;ARM64 (Apple Silicon), x64&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS 15&lt;/td&gt;
+          &lt;td&gt;Sequoia&lt;/td&gt;
+          &lt;td&gt;ARM64, x64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS 14&lt;/td&gt;
+          &lt;td&gt;Sonoma&lt;/td&gt;
+          &lt;td&gt;ARM64, x64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macOS 13以前&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Tier 3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;ネイティブメニュー、プラットフォームの慣習、およびネイティブビューの埋め込みについては、「macOS platform guide」を参照してください。&lt;/p&gt;
+&lt;h2&gt;iOS and iPadOS&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ios-and-ipados&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ios-and-ipados&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;iOSにおける.NETのサポートは、MAUIのライフサイクルに従います。MicrosoftがMAUIのサポートポリシーに基づいてモバイルOSバージョンのサポートを終了した場合、Avaloniaにおけるそのバージョンへのサポートも同様に終了します。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;バージョン&lt;/th&gt;
+          &lt;th&gt;アーキテクチャ&lt;/th&gt;
+          &lt;th&gt;ティア&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;iOS / iPadOS 26&lt;/td&gt;
+          &lt;td&gt;ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;iOS 18.x&lt;/td&gt;
+          &lt;td&gt;ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;iOS 17.x以前&lt;/td&gt;
+          &lt;td&gt;ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;最小対応 .NET バージョン: .NET 10.0&lt;br&gt;
+モバイル向けの .NET バージョンは、MAUI のサポートポリシーに従います。
+Microsoft は .NET 10 SDK から .NET 8 のモバイルワークロードを削除したため、.NET 10 SDK を使用している場合は .NET 8 向けの iOS ビルドを作成できません。&lt;br&gt;
+セットアップ手順については、「iOS platform guide」を参照してください。&lt;/p&gt;
+&lt;h2&gt;Android&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;android&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#android&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Androidにおける.NETのサポートは、MAUIのライフサイクルに従います。MicrosoftがMAUIのサポートポリシーに基づいてモバイルOSバージョンのサポートを終了した場合、Avaloniaにおけるそのバージョンへのサポートも同様に終了します。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;バージョン&lt;/th&gt;
+          &lt;th&gt;APIレベル&lt;/th&gt;
+          &lt;th&gt;アーキテクチャ&lt;/th&gt;
+          &lt;th&gt;ティア&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Android 16&lt;/td&gt;
+          &lt;td&gt;API 36&lt;/td&gt;
+          &lt;td&gt;ARM64, x64&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Android 12 to 15&lt;/td&gt;
+          &lt;td&gt;API 31 to 35&lt;/td&gt;
+          &lt;td&gt;ARM64, ARM32, x64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Android 11以前&lt;/td&gt;
+          &lt;td&gt;API 30以下&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Tier 3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;最小対応 .NET バージョン: .NET 10.0&lt;br&gt;
+モバイル向けの .NET バージョンは、MAUI のサポートポリシーに従います。
+Microsoft は .NET 10 SDK から .NET 8 のモバイルワークロードを削除したため、.NET 10 SDK を使用している場合は .NET 8 向けの Android ビルドを作成できません。&lt;br&gt;
+セットアップ手順については、「Android platform guide」を参照してください。&lt;/p&gt;
+&lt;h2&gt;Desktop Linux&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;desktop-linux&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#desktop-linux&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Avaloniaは、Linux上でX11を直接ターゲットにしています。Waylandのサポートは現在プレイベートプレビュー段階です。.NET SDK をサポートし、X11 またはフレームバッファ機能を備えたほとんどのディストリビューションで Avalonia アプリケーションを実行できます。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;ディストリビューション&lt;/th&gt;
+          &lt;th&gt;バージョン&lt;/th&gt;
+          &lt;th&gt;アーキテクチャ&lt;/th&gt;
+          &lt;th&gt;ティア&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ubuntu&lt;/td&gt;
+          &lt;td&gt;25.x&lt;/td&gt;
+          &lt;td&gt;x64, ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Fedora&lt;/td&gt;
+          &lt;td&gt;43&lt;/td&gt;
+          &lt;td&gt;x64&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Debian&lt;/td&gt;
+          &lt;td&gt;13 (Trixie)&lt;/td&gt;
+          &lt;td&gt;x64, ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ubuntu&lt;/td&gt;
+          &lt;td&gt;16.04 to 24.x&lt;/td&gt;
+          &lt;td&gt;x64, ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Fedora&lt;/td&gt;
+          &lt;td&gt;30 to 42&lt;/td&gt;
+          &lt;td&gt;x64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Debian&lt;/td&gt;
+          &lt;td&gt;9 (Stretch) to 12&lt;/td&gt;
+          &lt;td&gt;x64, ARM64&lt;/td&gt;
+          &lt;td&gt;Tier 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;その他のディストリビューション&lt;/td&gt;
+          &lt;td&gt;（Arch、Alpine、NixOS、Gentoo、その他）&lt;/td&gt;
+          &lt;td&gt;各種&lt;/td&gt;
+          &lt;td&gt;Tier 3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;レンダリング&lt;/strong&gt;：Skiaを介したOpenGL（X11）、またはソフトウェアレンダリング（フレームバッファ）&lt;br&gt;
+&lt;strong&gt;glibcの要件&lt;/strong&gt;：Skiaは glibc 2.17 をベースにビルドされています。muslなど、異なるCライブラリを使用しているディストリビューションでは、カスタムの libSkiaSharp.so をビルドする必要があります。詳細は「SkiaSharp」を参照してください。カスタムのSkiaビルドが必要なディストリビューションはティア 3となります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;必要なパッケージ&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;libx11-6 libice6 libsm6 libfontconfig1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;WSL 2 およびその他の設定の詳細については、「Linux platform guide」を参照してください。&lt;/p&gt;
+&lt;h3&gt;Embedded Linux&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;embedded-linux&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#embedded-linux&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Avaloniaは、組み込みLinuxデバイス上での実行をサポートしており、LinuxフレームバッファまたはDRM（Direct Rendering Manager）のいずれかを使用できます。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;ディストリビューション&lt;/th&gt;
+          &lt;th&gt;アーキテクチャ&lt;/th&gt;
+          &lt;th&gt;ランタイム識別子&lt;/th&gt;
+          &lt;th&gt;ティア&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Raspberry Pi OS&lt;/td&gt;
+          &lt;td&gt;ARM64, ARM32&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;linux-arm64&lt;/code&gt;, &lt;code&gt;linux-arm&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Tier 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;その他の組み込み Linux&lt;/td&gt;
+          &lt;td&gt;各種&lt;/td&gt;
+          &lt;td&gt;各種&lt;/td&gt;
+          &lt;td&gt;Tier 3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;必要パッケージ&lt;/strong&gt;：&lt;code&gt;libgbm1&lt;/code&gt;,&lt;code&gt;libgl1-mesa-dri&lt;/code&gt;,&lt;code&gt;libegl1-mesa&lt;/code&gt;,&lt;code&gt;libinput10&lt;/code&gt;&lt;br&gt;
+ディスプレイ出力の設定やデバイスのセットアップについては、「Embedded Linux guide」を参照してください。&lt;/p&gt;
+&lt;h2&gt;WebAssembly&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;webassembly&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#webassembly&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Avaloniaは、完全なWebAssemblyサポートを備えたあらゆるブラウザ上で動作します。サーバー側のコンポーネントは不要です。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;要件&lt;/th&gt;
+          &lt;th&gt;詳細&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;.NET バージョン&lt;/td&gt;
+          &lt;td&gt;.NET 8 以降&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ブラウザのサポート&lt;/td&gt;
+          &lt;td&gt;WebAssemblyをサポートするすべてのブラウザ（Can I use WebAssembly）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;レンダリング&lt;/td&gt;
+          &lt;td&gt;CanvasKit（WebGL）を介したSkia&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;セットアップとデプロイについては、「WebAssembly platform guide」を参照してください。&lt;/p&gt;
+&lt;h2&gt;プラットフォーム固有の修正への貢献&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;プラットフォーム固有の修正への貢献&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e5%9b%ba%e6%9c%89%e3%81%ae%e4%bf%ae%e6%ad%a3%e3%81%b8%e3%81%ae%e8%b2%a2%e7%8c%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;プラットフォーム固有の貢献（コントリビューション）は歓迎しますが、プロジェクトを健全に維持するため、上記のティア区分に沿ったものである必要があります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tier 1&lt;/strong&gt; 修正は常に歓迎され、通常のレビュー手続きを経て取り込まれます。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tier 2&lt;/strong&gt; ケースごとに評価されます。レビューでは、実装の複雑さ、Tier 1 への回帰（リグレッション）リスク、そして継続的な保守コストが考慮されます。保守負担が大きい場合、その作業には商用契約が必要になることがあります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tier 3&lt;/strong&gt; 修正は、レビューを行う前に商用契約が必要です。これは変更がどれほど小さく見えても同様です。なぜなら、コストはパッチそのものではなく、その変更をリリースごとに維持・テストし続けることにあるためです。&lt;/p&gt;
+&lt;p&gt;自分の貢献に商用契約が必要かどうか分からない場合は、作業を始める前に問い合わせてください。事前に確認することで、双方の時間を節約できます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
