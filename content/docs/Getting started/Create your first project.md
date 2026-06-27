@@ -1,5 +1,4 @@
 ---
-title: Create your first project
 weight: 3
 ---
-
+# 最初のプロジェクトを作成

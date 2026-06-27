@@ -9,34 +9,55 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Avalonia Docs JP</title>
-  <meta name="description" content="始めるAvalonia（クロスプラットフォーム対応の .NET UI フレームワーク）を始めましょう。SDK をインストールし、IDE をセットアップして、最初のプロジェクトを作成します。
-このセクションでは、Avalonia アプリケーションを一から作成し、実行できるようになるまでに必要な内容を解説します。ガイドは順番に進めることも、必要なものだけを参照することもできます。 Avaloniaをインストール.NET SDK と Avalonia のプロジェクトテンプレートをインストールします。IDEをセットアップJetBrains Rider、Visual StudioまたはVS CodeをAvalonia開発用に設定します。最初のプロジェクトを作成テンプレートを使ってAvaloniaアプリを作成し、実行します。スターターチュートリアル温度変換アプリを作成し、Avaloniaの基本的な概念を学びます。" /><link rel="canonical" href="http://localhost:1313/docs/getting-started/" itemprop="url" />
+  <meta name="description" content="IDEのセットアップAvaloniaの開発用に、任意のIDEを設定してください。
+Visual Studio、Visual Studio Code、または JetBrains Rider 用の拡張機能をインストールします。
+Visual StudioVisual Studio CodeRider Windows で作業している場合、Visual Studio にAvalonia for Visual Studio拡張機能を導入することで、充実したXAMLの編集機能やプレビュー機能を利用できます。
+この拡張機能は、Visual Studio 2022 バージョン 17.12 以降をサポートしています。" /><link rel="canonical" href="http://localhost:1313/docs/getting-started/setup-your-ide/" itemprop="url" />
 
 <meta property="og:title" content="">
 <meta
   property="og:description"
   content="
     
-      
+      IDEのセットアップAvaloniaの開発用に、任意のIDEを設定してください。
+Visual Studio、Visual Studio Code、または JetBrains Rider 用の拡張機能をインストールします。
+
+
+
+
+
+
+
+
+
+  Visual StudioVisual Studio CodeRider
+
+Windows で作業している場合、Visual Studio にAvalonia for Visual Studio拡張機能を導入することで、充実したXAMLの編集機能やプレビュー機能を利用できます。
+この拡張機能は、Visual Studio 2022 バージョン 17.12 以降をサポートしています。
     
   ">
 <meta
   property="og:type"
   content="
-    website
+    article
   ">
-<meta property="og:url" content="http://localhost:1313/docs/getting-started/">
+<meta property="og:url" content="http://localhost:1313/docs/getting-started/setup-your-ide/"><meta property="article:section" content="docs">
+
+
 
 
   <meta itemprop="name" content="Avalonia Docs JP">
-  <meta itemprop="description" content="始めるAvalonia（クロスプラットフォーム対応の .NET UI フレームワーク）を始めましょう。SDK をインストールし、IDE をセットアップして、最初のプロジェクトを作成します。
-このセクションでは、Avalonia アプリケーションを一から作成し、実行できるようになるまでに必要な内容を解説します。ガイドは順番に進めることも、必要なものだけを参照することもできます。 Avaloniaをインストール.NET SDK と Avalonia のプロジェクトテンプレートをインストールします。IDEをセットアップJetBrains Rider、Visual StudioまたはVS CodeをAvalonia開発用に設定します。最初のプロジェクトを作成テンプレートを使ってAvaloniaアプリを作成し、実行します。スターターチュートリアル温度変換アプリを作成し、Avaloniaの基本的な概念を学びます。">
-  <meta itemprop="dateModified" content="2026-06-26T19:19:07+09:00">
-  <meta itemprop="wordCount" content="42">
+  <meta itemprop="description" content="IDEのセットアップAvaloniaの開発用に、任意のIDEを設定してください。
+Visual Studio、Visual Studio Code、または JetBrains Rider 用の拡張機能をインストールします。
+Visual StudioVisual Studio CodeRider Windows で作業している場合、Visual Studio にAvalonia for Visual Studio拡張機能を導入することで、充実したXAMLの編集機能やプレビュー機能を利用できます。
+この拡張機能は、Visual Studio 2022 バージョン 17.12 以降をサポートしています。">
+  <meta itemprop="wordCount" content="133">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Avalonia Docs JP">
-  <meta name="twitter:description" content="始めるAvalonia（クロスプラットフォーム対応の .NET UI フレームワーク）を始めましょう。SDK をインストールし、IDE をセットアップして、最初のプロジェクトを作成します。
-このセクションでは、Avalonia アプリケーションを一から作成し、実行できるようになるまでに必要な内容を解説します。ガイドは順番に進めることも、必要なものだけを参照することもできます。 Avaloniaをインストール.NET SDK と Avalonia のプロジェクトテンプレートをインストールします。IDEをセットアップJetBrains Rider、Visual StudioまたはVS CodeをAvalonia開発用に設定します。最初のプロジェクトを作成テンプレートを使ってAvaloniaアプリを作成し、実行します。スターターチュートリアル温度変換アプリを作成し、Avaloniaの基本的な概念を学びます。">
+  <meta name="twitter:description" content="IDEのセットアップAvaloniaの開発用に、任意のIDEを設定してください。
+Visual Studio、Visual Studio Code、または JetBrains Rider 用の拡張機能をインストールします。
+Visual StudioVisual Studio CodeRider Windows で作業している場合、Visual Studio にAvalonia for Visual Studio拡張機能を導入することで、充実したXAMLの編集機能やプレビュー機能を利用できます。
+この拡張機能は、Visual Studio 2022 バージョン 17.12 以降をサポートしています。">
 <link href="/css/compiled/main.css" rel="stylesheet" />
     <link href="/css/variables.css" rel="stylesheet" />
     <link href="/css/custom.css" rel="stylesheet" />
@@ -128,9 +149,9 @@
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/"
       
     >
@@ -138,27 +159,6 @@
     </a>
       <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
   </div>
-  
-    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-              <a
-                href="#avalonia%e3%81%a8%e3%81%af"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >Avaloniaとは？</a>
-            </li>
-          <li>
-              <a
-                href="#%e6%97%a2%e3%81%abnet%e3%81%a8ide%e3%82%92%e3%81%8a%e6%8c%81%e3%81%a1%e3%81%ae%e5%a0%b4%e5%90%88"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >既に.NETとIDEをお持ちの場合</a>
-            </li>
-          <li>
-              <a
-                href="#wpf%e3%81%8b%e3%82%89%e3%81%ae%e7%a7%bb%e8%a1%8c%e3%81%a7%e3%81%99%e3%81%8b"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >WPFからの移行ですか？</a>
-            </li>
-          </ul>
-  
               <div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
@@ -170,15 +170,18 @@
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
       href="/docs/getting-started/setup-your-ide/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Setup Your ID E</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Set up your IDE</span>
     </a>
   </div>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'></ul>
+  
               
             </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
@@ -239,9 +242,9 @@
       <span class="hx:min-w-0 [word-break:break-word]">Supported Platforms</span>
     </a>
   </div></li>
-            <li class="open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+            <li class="open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/"
       
     >
@@ -259,13 +262,13 @@
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
       href="/docs/getting-started/setup-your-ide/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Setup Your ID E</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Set up your IDE</span>
     </a>
   </div>
               
@@ -375,19 +378,7 @@
 </div></div></aside>
     
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="目次">
-    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">このページの内容</p><ul>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#avalonia%e3%81%a8%e3%81%af">Avaloniaとは？
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e6%97%a2%e3%81%abnet%e3%81%a8ide%e3%82%92%e3%81%8a%e6%8c%81%e3%81%a1%e3%81%ae%e5%a0%b4%e5%90%88">既に.NETとIDEをお持ちの場合
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#wpf%e3%81%8b%e3%82%89%e3%81%ae%e7%a7%bb%e8%a1%8c%e3%81%a7%e3%81%99%e3%81%8b">WPFからの移行ですか？
-        </a>
-      </li></ul>
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">このページの内容</p><ul></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
         <button id="backToTop" tabindex="-1" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
           <span>トップにスクロール</span>
@@ -405,67 +396,83 @@
         <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
           <a href="/docs/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Docs</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Getting Started</div>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="/docs/getting-started/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Getting Started</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Set up your IDE</div>
   </div>
 
         <div class="content">
           
-          <h1>始める</h1><p>Avalonia（クロスプラットフォーム対応の .NET UI フレームワーク）を始めましょう。SDK をインストールし、IDE をセットアップして、最初のプロジェクトを作成します。</p>
-<p>このセクションでは、Avalonia アプリケーションを一から作成し、実行できるようになるまでに必要な内容を解説します。ガイドは順番に進めることも、必要なものだけを参照することもできます。
-<div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 3;">
+          <h1>IDEのセットアップ</h1><p>Avaloniaの開発用に、任意のIDEを設定してください。<br>
+Visual Studio、Visual Studio Code、または JetBrains Rider 用の拡張機能をインストールします。</p>
 
-<a
-  class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="/docs/getting-started/install-avalonia/"
-    ><div class="hx:mt-auto">
-    <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50">Avaloniaをインストール</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">.NET SDK と Avalonia のプロジェクトテンプレートをインストールします。</div></div></a>
 
-<a
-  class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="/docs/getting-started/set-up-your-ide/"
-    ><div class="hx:mt-auto">
-    <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50">IDEをセットアップ</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">JetBrains Rider、Visual StudioまたはVS CodeをAvalonia開発用に設定します。</div></div></a>
 
-<a
-  class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="/docs/getting-started/create-your-first-project/"
-    ><div class="hx:mt-auto">
-    <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50">最初のプロジェクトを作成</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">テンプレートを使ってAvaloniaアプリを作成し、実行します。</div></div></a>
 
-<a
-  class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="/docs/getting-started/starter-tutorial/"
-    ><div class="hx:mt-auto">
-    <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50">スターターチュートリアル</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">温度変換アプリを作成し、Avaloniaの基本的な概念を学びます。</div></div></a>
 
+
+
+
+<div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain">
+  <div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800" role="tablist"><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-0" role="tab" type="button" aria-controls="tabs-panel-tabs-00-0" aria-selected="true" tabindex="0" data-state="selected"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-1" role="tab" type="button" aria-controls="tabs-panel-tabs-00-1" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio Code</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-2" role="tab" type="button" aria-controls="tabs-panel-tabs-00-2" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Rider</span></span></button></div>
 </div>
-</p>
-<h2>Avaloniaとは？<span class="hx:absolute hx:-mt-20" id="avaloniaとは"></span>
-    <a href="#avalonia%e3%81%a8%e3%81%af" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>Avaloniaは、.NET向けのオープンソースのクロスプラットフォームUIフレームワークです。独自のレンダリングエンジンを使用してコントロールを描画するため、どのプラットフォームでも同じ見た目と動作を実現できます。C#またはF#とXAMLで一度UIを作成すれば、Windows、macOS、Linux、iOS、Android、そしてWebAssemblyにデプロイできます。</p>
-<p>WPFやUWPの経験がある場合、AvaloniaのXAMLやAPIは馴染みやすく感じるでしょう。XAMLベースのフレームワークが初めての場合は、スターターチュートリアルから始めることをおすすめします。</p>
-<h2>既に.NETとIDEをお持ちの場合<span class="hx:absolute hx:-mt-20" id="既にnetとideをお持ちの場合"></span>
-    <a href="#%e6%97%a2%e3%81%abnet%e3%81%a8ide%e3%82%92%e3%81%8a%e6%8c%81%e3%81%a1%e3%81%ae%e5%a0%b4%e5%90%88" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>既に.NET 8以上とIDEの設定が完了している場合は、そのままプロジェクトの作成に進んで構いません。</p>
-<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+<div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-0" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-0" aria-hidden="false" tabindex="0" data-state="selected"><p>Windows で作業している場合、Visual Studio にAvalonia for Visual Studio拡張機能を導入することで、充実したXAMLの編集機能やプレビュー機能を利用できます。<br>
+この拡張機能は、Visual Studio 2022 バージョン 17.12 以降をサポートしています。</p>
+<p>Avalonia for Visual Studio拡張機能は、プロフェッショナル向け開発ツール群である <a href="https://avaloniaui.net/pricing"target="_blank" rel="noopener">Avalonia Plus</a> の一部です。</p>
+<p><strong>Avalonia for Visual Studio のインストール方法</strong></p>
+<ol>
+<li>Visual Studioで 拡張機能 →拡張機能の管理 を開く</li>
+<li>検索バーに「Avalonia」と入力</li>
+<li>インストールをクリック</li>
+<li>追加のインストール手順に従う。<br>
+インストールを完了するために、Visual Studioを再起動する必要がある場合があります。</li>
+</ol>
+<p><img src="https://docs.avaloniaui.net/assets/images/download-vs-avalonia-extension-38f26cb008fc76cf7cae9e1f748c9ece.png" alt="IDE Setup"  loading="lazy" /></p>
+<p>または、<a href="https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS"target="_blank" rel="noopener">Visual Studio Marketplaceから拡張機能をダウンロード</a>することもできます。<br>
+機能や設定の詳細については、<a href="https://docs.avaloniaui.net/tools/visual-studio-extension"target="_blank" rel="noopener">Avalonia for Visual Studio</a>のページを参照してください。</p>
+<p>古いバージョンの Visual Studio を使用している場合は、Marketplace から対応する旧バージョンの拡張機能をダウンロードする必要がある場合があります。たとえば <a href="https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio"target="_blank" rel="noopener">Visual Studio 2019 用のバージョン</a>などです。</p>
+<p>XAMLプレビュー機能の使用方法について詳しくは、<a href="https://docs.avaloniaui.net/docs/app-development/xaml-preview-and-design-settings"target="_blank" rel="noopener">XAML live preview</a>のページを参照してください。</p>
+</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-1" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-1" aria-hidden="true"><p>Avalonia for Visual Studio Code拡張機能は、Visual Studio拡張機能と同じXAMLパーサーを基盤として構築されています。<br>
+両方のIDEは同じ基盤エンジンを共有しているため、コード編集機能の改善はVisual Studio Codeにも同時に反映されます。</p>
+<p>この拡張機能は、コンテキストに応じた補完機能、<code>x:DataType</code> に対応した詳細なクイック情報表示、XAMLの「定義へ移動」機能、名前空間の自動インポート、イベントハンドラーの生成、実行可能な診断機能、適切な DPI 処理を備えた信頼性の高い組み込み XAML プレビューアなど豊富な機能を提供します。</p>
+<p><strong>Avalonia for Visual Studio Code のインストール方法</strong></p>
+<ol>
+<li>Visual Studio Codeで拡張機能ビューを開く</li>
+<li>検索バーに「Avalonia」と入力</li>
+<li>「Avalonia Team」によって公開されている「Avalonia for VSCode」を選択してインストール</li>
+<li>必要に応じてVisual Studio Codeを再読み込み</li>
+</ol>
+<p><img src="https://docs.avaloniaui.net/assets/images/download-vscode-avalonia-extension-e28be0f9bb959582e5c955ee54a2c358.png" alt="IDE Setup"  loading="lazy" /></p>
+<p>または、<a href="https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia"target="_blank" rel="noopener">Visual Studio Marketplaceから拡張機能をダウンロード</a>することもできます。<br>
+XAMLプレビュー機能の使用方法について詳しくは、<a href="https://docs.avaloniaui.net/docs/app-development/xaml-preview-and-design-settings"target="_blank" rel="noopener">XAML live preview</a>のページを参照してください。</p>
+</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-2" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-2" aria-hidden="true"><p>macOS または Linux を使用している場合は、JetBrains Rider が推奨されます。<br>
+Rider はこれらのオペレーティングシステム上でXAMLの組み込みサポートを含む、完全で統合された開発環境を提供します。<br>
+作業中のXAMLをリアルタイムでプレビューできるようにするため、サードパーティ製プラグイン <a href="https://plugins.jetbrains.com/plugin/14839-avaloniarider"target="_blank" rel="noopener">AvaloniaRider</a> のインストールを検討してください。</p>
+<p><strong>AvaloniaRider のインストール方法</strong></p>
+<ol>
+<li>JetBrains Riderで Settings（設定）→ Plugins（プラグイン） を開く</li>
+<li>Marketplace タブに移動</li>
+<li>検索バーに「AvaloniaRider」と入力</li>
+<li>Install（インストール） をクリック</li>
+<li>追加のインストール手順に従う。<br>
+インストールを完了するために、JetBrains Riderを再起動する必要がある場合があります。
+<img src="https://docs.avaloniaui.net/assets/images/download-rider-avaloniarider-f7cbf3952120015b160d1b0fdd8d3b5c.png" alt="IDE Setup"  loading="lazy" /></li>
+</ol>
+<p>XAMLプレビュー機能の使用方法について詳しくは、<a href="https://docs.avaloniaui.net/docs/app-development/xaml-preview-and-design-settings"target="_blank" rel="noopener">XAML live preview</a>のページを参照してください。</p>
+</div></div>
 
-<div><pre><code>dotnet new install Avalonia.Templates
-dotnet new avalonia.mvvm -o MyApp
-cd MyApp
-dotnet run</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
-  <button
-    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="コードをコピー"
-    aria-label="コードをコピー"
-    data-copied-label="コピーしました！"
-  >
-    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
-<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
-  </button>
-</div>
-</div>
-<h2>WPFからの移行ですか？<span class="hx:absolute hx:-mt-20" id="wpfからの移行ですか"></span>
-    <a href="#wpf%e3%81%8b%e3%82%89%e3%81%ae%e7%a7%bb%e8%a1%8c%e3%81%a7%e3%81%99%e3%81%8b" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>AvaloniaのAPIは意図的にWPFに近い設計になっていますが、スタイリング、テンプレート、プロパティシステムには重要な違いがあります。セクションごとの比較については、<a href="/docs/">WPF移行ガイド</a>を参照してください。</p>
-<p>既存のWPFアプリケーションをクロスプラットフォームで、書き直さずに動かしたい場合は、<a href="https://docs.avaloniaui.net/xpf"target="_blank" rel="noopener">Avalonia XPF</a>を使用することで、Avaloniaのレンダリングエンジン上でバイナリ互換のWPFサポートを利用できます。</p>
 
         </div>
-        
-    <div class="hx:mt-12 hx:mb-8 hx:block hx:text-xs hx:text-gray-500 hx:ltr:text-right hx:rtl:text-left hx:dark:text-gray-400">
-      最終更新日 <time datetime="2026-06-26T19:19:07.000Z">June 26, 2026</time></div>
+        <div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="/docs/getting-started/install-avalonia/"
+        title="Install Avalonia"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Install Avalonia</a><a
+        href="/docs/getting-started/create-your-first-project/"
+        title="Create Your First Project"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >Create Your First Project<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
       </main>
     </article>
   </div>

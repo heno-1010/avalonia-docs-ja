@@ -207,20 +207,20 @@ dotnet build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-
     </item>
     
     <item>
-      <title>Set up your IDE</title>
-      <link>http://localhost:1313/docs/getting-started/set-up-your-ide/</link>
+      <title></title>
+      <link>http://localhost:1313/docs/getting-started/setup-your-ide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docs/getting-started/set-up-your-ide/</guid>
+      <guid>http://localhost:1313/docs/getting-started/setup-your-ide/</guid>
       <description>
         
         
-        
+        &lt;h1&gt;IDEのセットアップ&lt;/h1&gt;
       </description>
     </item>
     
     <item>
-      <title>Create your first project</title>
+      <title></title>
       <link>http://localhost:1313/docs/getting-started/create-your-first-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -228,7 +228,7 @@ dotnet build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-
       <description>
         
         
-        
+        &lt;h1&gt;最初のプロジェクトを作成&lt;/h1&gt;
       </description>
     </item>
     
