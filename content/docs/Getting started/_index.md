@@ -14,7 +14,7 @@ Avalonia（クロスプラットフォーム対応の .NET UI フレームワー
 >}}
 
 {{< card
-    link="/docs/getting-started/set-up-your-ide/"
+    link="/docs/getting-started/setup-your-ide/"
     title="IDEをセットアップ"
     subtitle="JetBrains Rider、Visual StudioまたはVS CodeをAvalonia開発用に設定します。"
 >}}
