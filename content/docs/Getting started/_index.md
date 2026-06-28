@@ -48,6 +48,6 @@ dotnet run
 ```
 
 ## WPFからの移行ですか？
-AvaloniaのAPIは意図的にWPFに近い設計になっていますが、スタイリング、テンプレート、プロパティシステムには重要な違いがあります。セクションごとの比較については、[WPF移行ガイド](/docs/)を参照してください。
+AvaloniaのAPIは意図的にWPFに近い設計になっていますが、スタイリング、テンプレート、プロパティシステムには重要な違いがあります。セクションごとの比較については、[WPF移行ガイド](https://docs.avaloniaui.net/docs/migration/wpf)を参照してください。
 
 既存のWPFアプリケーションをクロスプラットフォームで、書き直さずに動かしたい場合は、[Avalonia XPF](https://docs.avaloniaui.net/xpf)を使用することで、Avaloniaのレンダリングエンジン上でバイナリ互換のWPFサポートを利用できます。

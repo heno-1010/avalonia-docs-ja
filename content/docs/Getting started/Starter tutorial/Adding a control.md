@@ -1,5 +1,5 @@
 ---
-title: Adding a control
 weight: 3
 ---
-
+# コントロールの追加
+現在翻訳中です。

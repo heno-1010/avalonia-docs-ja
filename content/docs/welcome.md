@@ -37,22 +37,22 @@ XAMLとC#またはF#を使って一度開発すれば、以下のプラットフ
 
 ## 進め方を選ぶ
 ### Avaloniaは初めてですか？
-- [Avaloniaのインストール](/docs/getting-started/install-avalonia/)と[IDE（開発環境）の設定](/docs/getting-started/set-up-your-ide/)を行う
+- [Avaloniaのインストール](/docs/getting-started/install-avalonia/)と[IDE（開発環境）の設定](/docs/getting-started/setup-your-ide/)を行う
 - [初めてのプロジェクトを作成する](/docs/getting-started/create-your-first-project/)
 - [チュートリアル](/docs/getting-started/starter-tutorial/)に従って、温度変換アプリを構築する
-- [XAML、コントロール、レイアウト、ビジュアルツリーなどの基本を学ぶ](/docs/)
+- [XAML、コントロール、レイアウト、ビジュアルツリーなどの基本を学ぶ](https://docs.avaloniaui.net/docs/fundamentals/avalonia-xaml)
 
 ### WPFの経験がありますか？
-- [WPF移行ガイド](/docs/)：セクションごとの詳細な比較
-- [WPFチートシート](/docs/)：WPFの主要な概念とAvaloniaにおける対応機能の簡易マッピング  
+- [WPF移行ガイド](https://docs.avaloniaui.net/docs/migration/wpf)：セクションごとの詳細な比較
+- [WPFチートシート](https://docs.avaloniaui.net/docs/migration/wpf/cheat-sheet)：WPFの主要な概念とAvaloniaにおける対応機能の簡易マッピング  
 既存のWPFアプリケーションを大きく書き換えることなくクロスプラットフォームで実行する必要がある場合は、Avalonia XPFを使用することで、Avaloniaのレンダリングエンジン上でバイナリ互換性のあるWPFサポートを利用できます。
 
 ### Avalonia 11からのアップグレードですか？
 Avalonia 12では、デフォルトでのコンパイル済みバインディングの有効化、新しいクリップボードAPI、更新されたウィンドウデコレーションなどが含まれています。
-- [Avalonia 12における破壊的変更](/docs/)：各変更に対する移行ガイドを含む完全な一覧
+- [Avalonia 12における破壊的変更](https://docs.avaloniaui.net/docs/avalonia12-breaking-changes)：各変更に対する移行ガイドを含む完全な一覧
 
 ### サンプルをお探しですか？
-- [サンプルとチュートリアル](/docs/)：スターターアプリ、実践的な実例、およびビデオ解説
+- [サンプルとチュートリアル](https://docs.avaloniaui.net/docs/samples-tutorials)：スターターアプリ、実践的な実例、およびビデオ解説
 
 ## お困りですか？
 もし行き詰まった場合は、[トラブルシューティング](https://docs.avaloniaui.net/troubleshooting)を確認するか、GitHub Discussions のコミュニティで質問してみてください。  
