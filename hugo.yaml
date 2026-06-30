@@ -17,3 +17,7 @@ params:
   sidebar:
     toggleable: true
     autoCollapse: false
+
+services:
+  googleAnalytics:
+    ID: G-9KCRXJQ64E
