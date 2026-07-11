@@ -13,13 +13,13 @@ Avaloniaのインストール、IDEの設定、そして最初のプロジェク
 {{< cards >}}
 
 {{< card
-    link="/docs/getting-started/starter-tutorial/"
+    link="/docs/getting-started/starter-tutorial/adding-a-control/"
     title="コントロールの追加"
     subtitle="アプリにボタンを追加し、ウィンドウ内に配置"
 >}}
 
 {{< card
-    link="/docs/getting-started/starter-tutorial/"
+    link="/docs/getting-started/starter-tutorial/adding-some-layout/"
     title="レイアウトの追加"
     subtitle="レイアウトコントロールを使用し、画面上の複数のコントロールを配置"
 >}}

@@ -985,5 +985,232 @@ Calculateボタンがウィンドウの中央に移動するのが見えるは�
       </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs/getting-started/starter-tutorial/adding-some-layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/getting-started/starter-tutorial/adding-some-layout/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;レイアウトの追加&lt;/h1&gt;&lt;p&gt;現時点で、温度変換アプリには、ウィンドウの中央にボタンが1つ配置されています。&lt;br&gt;
+各Avaloniaウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけのため、これ以上要素を追加することはできません。（レイアウト領域についての詳しい説明は次のページ「Controls reference page」で扱います。）&lt;br&gt;
+ウィンドウ内に複数のUI要素を配置するには、&lt;strong&gt;レイアウトコントロール&lt;/strong&gt;を使用する必要があります。&lt;br&gt;
+レイアウトコントロールについての詳しい情報は、&lt;a href=&#34;https://docs.avaloniaui.net/controls&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Layout controls&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;h2&gt;StackPanelの挿入&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;stackpanelの挿入&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#stackpanel%e3%81%ae%e6%8c%bf%e5%85%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;StackPanel レイアウトコントロールを使用すると、ボタンの上にテキストを配置できます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;MainWindow.axaml&lt;/strong&gt; ファイル内で、Buttonを&lt;code&gt;&amp;lt;StackPanel&amp;gt;...&amp;lt;/StackPanel&amp;gt;&lt;/code&gt;で囲んでください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;StackPanel&amp;gt;
+	&amp;lt;Button&amp;gt;Calculate&amp;lt;/Button&amp;gt;
+&amp;lt;/StackPanel&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ボタンの上に&lt;code&gt;TextBlock&lt;/code&gt;を追加してください。&lt;br&gt;
+（デフォルトの &lt;strong&gt;MainWindow.axaml&lt;/strong&gt; にあった &lt;code&gt;TextBlock&lt;/code&gt; タグを思い出すかもしれません。これはウィンドウ内にテキストを表示するものです。）&lt;br&gt;
+&lt;code&gt;TextBlock&lt;/code&gt; の属性を次のように設定してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Margin=&amp;ldquo;5&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;FontSize=&amp;ldquo;24&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;HorizontalAlignment=&amp;ldquo;Center&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Text=&amp;ldquo;Temperature Converter&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;StackPanel&amp;gt;
+    &amp;lt;TextBlock Margin=&amp;#34;5&amp;#34;
+               FontSize=&amp;#34;24&amp;#34; 
+               HorizontalAlignment=&amp;#34;Center&amp;#34;
+               Text=&amp;#34;Temperature Converter&amp;#34;&amp;gt;
+    &amp;lt;/TextBlock&amp;gt;
+
+    &amp;lt;Button HorizontalAlignment=&amp;#34;Center&amp;#34;&amp;gt;Calculate&amp;lt;/Button&amp;gt;
+&amp;lt;/StackPanel&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;アプリを実行するか、プレビューアーで確認してください。&lt;br&gt;
+「Temperature Converter」という文字が、「Calculate」ボタンの上に表示されているはずです。
+&lt;img src=&#34;https://docs.avaloniaui.net/assets/images/temperature-converter-text-only-47a9bf06b79989bd4368fdf55460d9d4.png&#34; alt=&#34;Temperature Converter&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;TextBlock&lt;/code&gt; を &lt;code&gt;&amp;lt;Border&amp;gt;...&amp;lt;/Border&amp;gt;&lt;/code&gt; タグで囲み、&lt;code&gt;Border&lt;/code&gt; の属性を次のように設定してください。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Margin=&amp;ldquo;5&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;CornerRadius=&amp;ldquo;10&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Background=&amp;ldquo;LightBlue&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;StackPanel&amp;gt;
+    &amp;lt;Border Margin=&amp;#34;5&amp;#34; CornerRadius=&amp;#34;10&amp;#34; Background=&amp;#34;LightBlue&amp;#34;&amp;gt;
+        &amp;lt;TextBlock Margin=&amp;#34;5&amp;#34;
+                   FontSize=&amp;#34;24&amp;#34; 
+                   HorizontalAlignment=&amp;#34;Center&amp;#34;
+                   Text=&amp;#34;Temperature Converter&amp;#34;&amp;gt;
+        &amp;lt;/TextBlock&amp;gt;
+    &amp;lt;/Border&amp;gt;
+
+    &amp;lt;Button HorizontalAlignment=&amp;#34;Center&amp;#34;&amp;gt;Calculate&amp;lt;/Button&amp;gt;
+&amp;lt;/StackPanel&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;アプリを実行するか、プレビューアーで確認してください。&lt;br&gt;
+「Temperature Converter」という文字が、角の丸い青い枠（ボックス）の中に表示されているはずです。
+&lt;img src=&#34;https://docs.avaloniaui.net/assets/images/temperature-converter-blue-border-85016c962da4c300f410b2bb07adc855.png&#34; alt=&#34;Temperature Converter&#34;  loading=&#34;lazy&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;code&gt;StackPanel&lt;/code&gt;はデフォルトだと、要素を縦方向（垂直）に並べます。&lt;br&gt;
+&lt;code&gt;Orientation&lt;/code&gt; 属性を &lt;code&gt;Horizontal&lt;/code&gt; に設定すると、横方向（水平方向）に並べることができます。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Gridの挿入&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;gridの挿入&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#grid%e3%81%ae%e6%8c%bf%e5%85%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;次は、Grid レイアウトコントロールを追加します。Gridは、行と列で構成されたセルを作成し、そのセルの中に様々なコントロールを配置できるレイアウトです。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;アプリが実行中であれば停止&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MainWindow.axaml&lt;/strong&gt; ファイル内で、Buttonを&lt;code&gt;&amp;lt;/Border&amp;gt;&lt;/code&gt;と&lt;code&gt;&amp;lt;Button&amp;gt;&lt;/code&gt;の間に、&lt;code&gt;&amp;lt;Grid&amp;gt;...&amp;lt;/Grid&amp;gt;&lt;/code&gt;タグを挿入してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;StackPanel&amp;gt;
+    &amp;lt;Border Margin=&amp;#34;5&amp;#34; CornerRadius=&amp;#34;10&amp;#34; Background=&amp;#34;LightBlue&amp;#34;&amp;gt;
+        &amp;lt;TextBlock Margin=&amp;#34;5&amp;#34;
+            HorizontalAlignment=&amp;#34;Center&amp;#34;
+            FontSize=&amp;#34;24&amp;#34;
+            Text=&amp;#34;Temperature Converter&amp;#34;&amp;gt;
+        &amp;lt;/TextBlock&amp;gt;
+    &amp;lt;/Border&amp;gt;
+    &amp;lt;Grid ShowGridLines=&amp;#34;True&amp;#34; Margin=&amp;#34;5&amp;#34; 
+          ColumnDefinitions=&amp;#34;120, 100&amp;#34;
+          RowDefinitions=&amp;#34;Auto, Auto&amp;#34;&amp;gt;
+    &amp;lt;/Grid&amp;gt;
+    &amp;lt;Button HorizontalAlignment=&amp;#34;Center&amp;#34;&amp;gt;Calculate&amp;lt;/Button&amp;gt;
+&amp;lt;/StackPanel&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;ここでは、&lt;code&gt;Gird&lt;/code&gt;にいくつかの属性を設定しています。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2列2行&lt;/li&gt;
+&lt;li&gt;グリッド線の表示&lt;/li&gt;
+&lt;li&gt;セルの高さは内容に合わせて自動的に調整&lt;br&gt;
+空のセルの高さは自動設定では0になるため、現在はGirdが水平な一本線として表示される
+&lt;img src=&#34;https://docs.avaloniaui.net/assets/images/temperature-converter-empty-grid-aeb17bff021cec2752962e88e448a48b.png&#34; alt=&#34;Temperature Converter&#34;  loading=&#34;lazy&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Gridにコントロールを配置&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;gridにコントロールを配置&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#grid%e3%81%ab%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%82%92%e9%85%8d%e7%bd%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Grid.Row&lt;/code&gt; と &lt;code&gt;Grid.Column&lt;/code&gt; 属性で対象のセルを指定し、&lt;code&gt;Grid&lt;/code&gt; の左側のセルに &lt;code&gt;TextBlock&lt;/code&gt; コントロールを配置、「Celsius」と「Fahrenheit」を表示します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;code&gt;Grid&lt;/code&gt;の行や列の番号は0から始まります。最初のセルは0番として扱われます。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;        &amp;lt;Grid ShowGridLines=&amp;#34;True&amp;#34; Margin=&amp;#34;5&amp;#34; 
+              ColumnDefinitions=&amp;#34;120, 100&amp;#34;
+              RowDefinitions=&amp;#34;Auto, Auto&amp;#34;&amp;gt;
+            &amp;lt;TextBlock Grid.Row=&amp;#34;0&amp;#34; Grid.Column=&amp;#34;0&amp;#34; Margin=&amp;#34;10&amp;#34;&amp;gt;Celsius&amp;lt;/TextBlock&amp;gt;
+            &amp;lt;TextBlock Grid.Row=&amp;#34;1&amp;#34; Grid.Column=&amp;#34;0&amp;#34; Margin=&amp;#34;10&amp;#34;&amp;gt;Fahrenheit&amp;lt;/TextBlock&amp;gt;
+        &amp;lt;/Grid&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;次に、&lt;code&gt;Grid.Row&lt;/code&gt; と &lt;code&gt;Grid.Column&lt;/code&gt; 属性で対象のセルを指定し、&lt;code&gt;Grid&lt;/code&gt; の右側のセルに &lt;code&gt;TextBox&lt;/code&gt; コントロールを配置します。&lt;br&gt;
+&lt;code&gt;TextBox&lt;/code&gt; は、キーボードから文字を入力できる入力欄を作成するためのコントロールです。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;        &amp;lt;Grid ShowGridLines=&amp;#34;True&amp;#34; Margin=&amp;#34;5&amp;#34; 
+              ColumnDefinitions=&amp;#34;120, 100&amp;#34;
+              RowDefinitions=&amp;#34;Auto, Auto&amp;#34;&amp;gt;
+            &amp;lt;TextBlock Grid.Row=&amp;#34;0&amp;#34; Grid.Column=&amp;#34;0&amp;#34; Margin=&amp;#34;10&amp;#34;&amp;gt;Celsius&amp;lt;/TextBlock&amp;gt;
+            &amp;lt;TextBox Grid.Row=&amp;#34;0&amp;#34; Grid.Column=&amp;#34;1&amp;#34; Margin=&amp;#34;0 5&amp;#34; Text=&amp;#34;0&amp;#34;/&amp;gt;
+            &amp;lt;TextBlock Grid.Row=&amp;#34;1&amp;#34; Grid.Column=&amp;#34;0&amp;#34; Margin=&amp;#34;10&amp;#34;&amp;gt;Fahrenheit&amp;lt;/TextBlock&amp;gt;
+            &amp;lt;TextBox Grid.Row=&amp;#34;1&amp;#34; Grid.Column=&amp;#34;1&amp;#34; Margin=&amp;#34;0 5&amp;#34; Text=&amp;#34;0&amp;#34;/&amp;gt;
+        &amp;lt;/Grid&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;アプリを実行するか、プレビューアーで確認してください。&lt;br&gt;
+グリッド線で区切られたセル内に、追加したテキストと入力ボックスがウィンドウ上に表示されているはずです。
+&lt;img src=&#34;https://docs.avaloniaui.net/assets/images/temperature-converter-filled-grid-8b9aa9fda86ac3ba2f2a4c8bef3244a7.png&#34; alt=&#34;Temperature Converter&#34;  loading=&#34;lazy&#34; /&gt;
+次のページでは、アプリのウィンドウサイズを調整する方法を学びます。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
