@@ -9,65 +9,74 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Avalonia Docs JP</title>
-  <meta name="description" content="最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成 最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
-Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック 検索ボックスに Avalonia と入力 検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック プロジェクト名を 「GetStartedApp」 に設定 必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック 使用する .NET のバージョンをフレームワークとして選択 ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択 作成 をクリック Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す 検索ボックスに .NET と入力 検索結果から .NET: New Project… を選択 プロジェクトテンプレートの一覧から Avalonia MVVM App を選択 プロジェクトを保存するディレクトリを指定 プロジェクト名を 「GetStartedApp」 に設定 Create project をクリック Riderのスタート画面で New Solution を選択 サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択 ソリューション名を 「GetStartedApp」 に設定 Create をクリック 次のコマンドを実行" /><link rel="canonical" href="http://localhost:1313/docs/getting-started/create-your-first-project/" itemprop="url" />
+  <meta name="description" content="レイアウトの追加現時点で、温度変換アプリには、ウィンドウの中央にボタンが1つ配置されています。
+各Avaloniaウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけのため、これ以上要素を追加することはできません。（レイアウト領域についての詳しい説明は次のページ「Controls reference page」で扱います。）
+ウィンドウ内に複数のUI要素を配置するには、レイアウトコントロールを使用する必要があります。
+レイアウトコントロールについての詳しい情報は、Layout controlsを参照してください。
+StackPanelの挿入 StackPanel レイアウトコントロールを使用すると、ボタンの上にテキストを配置できます。
+MainWindow.axaml ファイル内で、Buttonを&lt;StackPanel&gt;...&lt;/StackPanel&gt;で囲んでください。 &lt;StackPanel&gt;&lt;Button&gt;Calculate&lt;/Button&gt;&lt;/StackPanel&gt; ボタンの上にTextBlockを追加してください。
+（デフォルトの MainWindow.axaml にあった TextBlock タグを思い出すかもしれません。これはウィンドウ内にテキストを表示するものです。）
+TextBlock の属性を次のように設定してください。 Margin=“5” FontSize=“24” HorizontalAlignment=“Center” Text=“Temperature Converter” &lt;StackPanel&gt;&lt;TextBlock Margin=&#34;5&#34;FontSize=&#34;24&#34; HorizontalAlignment=&#34;Center&#34;Text=&#34;Temperature Converter&#34;&gt;&lt;/TextBlock&gt;&lt;Button HorizontalAlignment=&#34;Center&#34;&gt;Calculate&lt;/Button&gt;&lt;/StackPanel&gt; アプリを実行するか、プレビューアーで確認してください。
+「Temperature Converter」という文字が、「Calculate」ボタンの上に表示されているはずです。 " /><link rel="canonical" href="http://localhost:1313/docs/getting-started/starter-tutorial/adding-some-layout---%E3%82%B3%E3%83%94%E3%83%BC/" itemprop="url" />
 
 <meta property="og:title" content="">
 <meta
   property="og:description"
   content="
     
-      最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成
-    最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
+      レイアウトの追加現時点で、温度変換アプリには、ウィンドウの中央にボタンが1つ配置されています。
+各Avaloniaウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけのため、これ以上要素を追加することはできません。（レイアウト領域についての詳しい説明は次のページ「Controls reference page」で扱います。）
+ウィンドウ内に複数のUI要素を配置するには、レイアウトコントロールを使用する必要があります。
+レイアウトコントロールについての詳しい情報は、Layout controlsを参照してください。
+StackPanelの挿入
+    StackPanel レイアウトコントロールを使用すると、ボタンの上にテキストを配置できます。
+
+MainWindow.axaml ファイル内で、Buttonを&lt;StackPanel&gt;...&lt;/StackPanel&gt;で囲んでください。
+
+
+
+&lt;StackPanel&gt;
+	&lt;Button&gt;Calculate&lt;/Button&gt;
+&lt;/StackPanel&gt;
+  
+    
+
+  
+
+
+
+ボタンの上にTextBlockを追加してください。
+（デフォルトの MainWindow.axaml にあった TextBlock タグを思い出すかもしれません。これはウィンドウ内にテキストを表示するものです。）
+TextBlock の属性を次のように設定してください。
+
+
+Margin=&ldquo;5&rdquo;
+FontSize=&ldquo;24&rdquo;
+HorizontalAlignment=&ldquo;Center&rdquo;
+Text=&ldquo;Temperature Converter&rdquo;
+
+
+
+&lt;StackPanel&gt;
+    &lt;TextBlock Margin=&#34;5&#34;
+               FontSize=&#34;24&#34; 
+               HorizontalAlignment=&#34;Center&#34;
+               Text=&#34;Temperature Converter&#34;&gt;
+    &lt;/TextBlock&gt;
+
+    &lt;Button HorizontalAlignment=&#34;Center&#34;&gt;Calculate&lt;/Button&gt;
+&lt;/StackPanel&gt;
+  
+    
+
+  
 
 
 
 
+アプリを実行するか、プレビューアーで確認してください。
+「Temperature Converter」という文字が、「Calculate」ボタンの上に表示されているはずです。
 
-
-
-
-
-
-
-  Visual StudioVisual Studio CodeRiderCommand line
-
-
-Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック
-検索ボックスに Avalonia と入力
-検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック
-プロジェクト名を 「GetStartedApp」 に設定
-必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック
-使用する .NET のバージョンをフレームワークとして選択
-ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択
-作成 をクリック
-
-
-Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す
-検索ボックスに .NET と入力
-検索結果から .NET: New Project&hellip; を選択
-プロジェクトテンプレートの一覧から Avalonia MVVM App を選択
-プロジェクトを保存するディレクトリを指定
-プロジェクト名を 「GetStartedApp」 に設定
-Create project をクリック
-
-
-Riderのスタート画面で New Solution を選択
-サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択
-ソリューション名を 「GetStartedApp」 に設定
-Create をクリック
-
-次のコマンドを実行
     
   ">
 <meta
@@ -75,34 +84,33 @@ Create をクリック
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1313/docs/getting-started/create-your-first-project/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1313/docs/getting-started/starter-tutorial/adding-some-layout---%E3%82%B3%E3%83%94%E3%83%BC/"><meta property="article:section" content="docs">
 
-
-<meta
-  property="article:modified_time"
-  content="2026-06-30T18:49:26+09:00">
 
 
 
   <meta itemprop="name" content="Avalonia Docs JP">
-  <meta itemprop="description" content="最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成 最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
-Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック 検索ボックスに Avalonia と入力 検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック プロジェクト名を 「GetStartedApp」 に設定 必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック 使用する .NET のバージョンをフレームワークとして選択 ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択 作成 をクリック Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す 検索ボックスに .NET と入力 検索結果から .NET: New Project… を選択 プロジェクトテンプレートの一覧から Avalonia MVVM App を選択 プロジェクトを保存するディレクトリを指定 プロジェクト名を 「GetStartedApp」 に設定 Create project をクリック Riderのスタート画面で New Solution を選択 サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択 ソリューション名を 「GetStartedApp」 に設定 Create をクリック 次のコマンドを実行">
-  <meta itemprop="dateModified" content="2026-06-30T18:49:26+09:00">
-  <meta itemprop="wordCount" content="154">
+  <meta itemprop="description" content="レイアウトの追加現時点で、温度変換アプリには、ウィンドウの中央にボタンが1つ配置されています。
+各Avaloniaウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけのため、これ以上要素を追加することはできません。（レイアウト領域についての詳しい説明は次のページ「Controls reference page」で扱います。）
+ウィンドウ内に複数のUI要素を配置するには、レイアウトコントロールを使用する必要があります。
+レイアウトコントロールについての詳しい情報は、Layout controlsを参照してください。
+StackPanelの挿入 StackPanel レイアウトコントロールを使用すると、ボタンの上にテキストを配置できます。
+MainWindow.axaml ファイル内で、Buttonを&lt;StackPanel&gt;...&lt;/StackPanel&gt;で囲んでください。 &lt;StackPanel&gt;&lt;Button&gt;Calculate&lt;/Button&gt;&lt;/StackPanel&gt; ボタンの上にTextBlockを追加してください。
+（デフォルトの MainWindow.axaml にあった TextBlock タグを思い出すかもしれません。これはウィンドウ内にテキストを表示するものです。）
+TextBlock の属性を次のように設定してください。 Margin=“5” FontSize=“24” HorizontalAlignment=“Center” Text=“Temperature Converter” &lt;StackPanel&gt;&lt;TextBlock Margin=&#34;5&#34;FontSize=&#34;24&#34; HorizontalAlignment=&#34;Center&#34;Text=&#34;Temperature Converter&#34;&gt;&lt;/TextBlock&gt;&lt;Button HorizontalAlignment=&#34;Center&#34;&gt;Calculate&lt;/Button&gt;&lt;/StackPanel&gt; アプリを実行するか、プレビューアーで確認してください。
+「Temperature Converter」という文字が、「Calculate」ボタンの上に表示されているはずです。">
+  <meta itemprop="wordCount" content="174">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Avalonia Docs JP">
-  <meta name="twitter:description" content="最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成 最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
-Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック 検索ボックスに Avalonia と入力 検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック プロジェクト名を 「GetStartedApp」 に設定 必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック 使用する .NET のバージョンをフレームワークとして選択 ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択 作成 をクリック Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す 検索ボックスに .NET と入力 検索結果から .NET: New Project… を選択 プロジェクトテンプレートの一覧から Avalonia MVVM App を選択 プロジェクトを保存するディレクトリを指定 プロジェクト名を 「GetStartedApp」 に設定 Create project をクリック Riderのスタート画面で New Solution を選択 サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択 ソリューション名を 「GetStartedApp」 に設定 Create をクリック 次のコマンドを実行">
+  <meta name="twitter:description" content="レイアウトの追加現時点で、温度変換アプリには、ウィンドウの中央にボタンが1つ配置されています。
+各Avaloniaウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけのため、これ以上要素を追加することはできません。（レイアウト領域についての詳しい説明は次のページ「Controls reference page」で扱います。）
+ウィンドウ内に複数のUI要素を配置するには、レイアウトコントロールを使用する必要があります。
+レイアウトコントロールについての詳しい情報は、Layout controlsを参照してください。
+StackPanelの挿入 StackPanel レイアウトコントロールを使用すると、ボタンの上にテキストを配置できます。
+MainWindow.axaml ファイル内で、Buttonを&lt;StackPanel&gt;...&lt;/StackPanel&gt;で囲んでください。 &lt;StackPanel&gt;&lt;Button&gt;Calculate&lt;/Button&gt;&lt;/StackPanel&gt; ボタンの上にTextBlockを追加してください。
+（デフォルトの MainWindow.axaml にあった TextBlock タグを思い出すかもしれません。これはウィンドウ内にテキストを表示するものです。）
+TextBlock の属性を次のように設定してください。 Margin=“5” FontSize=“24” HorizontalAlignment=“Center” Text=“Temperature Converter” &lt;StackPanel&gt;&lt;TextBlock Margin=&#34;5&#34;FontSize=&#34;24&#34; HorizontalAlignment=&#34;Center&#34;Text=&#34;Temperature Converter&#34;&gt;&lt;/TextBlock&gt;&lt;Button HorizontalAlignment=&#34;Center&#34;&gt;Calculate&lt;/Button&gt;&lt;/StackPanel&gt; アプリを実行するか、プレビューアーで確認してください。
+「Temperature Converter」という文字が、「Calculate」ボタンの上に表示されているはずです。">
 <link href="/css/compiled/main.css" rel="stylesheet" />
     <link href="/css/variables.css" rel="stylesheet" />
     <link href="/css/custom.css" rel="stylesheet" />
@@ -225,38 +233,17 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/create-your-first-project/"
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">Create Your First Project</span>
     </a>
   </div>
-  
-    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-              <a
-                href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >プロジェクトを作成</a>
-            </li>
-          <li>
-              <a
-                href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e5%ae%9f%e8%a1%8c"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >プロジェクトを実行</a>
-            </li>
-          <li>
-              <a
-                href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%e4%bd%95%e3%81%8c%e5%90%ab%e3%81%be%e3%82%8c%e3%81%a6%e3%81%84%e3%81%be%e3%81%99%e3%81%8b"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >プロジェクトに何が含まれていますか？</a>
-            </li>
-          </ul>
-  
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/starter-tutorial/"
@@ -264,7 +251,7 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     >
       <span class="hx:min-w-0 [word-break:break-word]">Starter Tutorial</span>
     </a>
-      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
+      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
   </div>
               <div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
@@ -277,6 +264,37 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      href="/docs/getting-started/starter-tutorial/adding-some-layout---%E3%82%B3%E3%83%94%E3%83%BC/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Adding Some Layout コピー</span>
+    </a>
+  </div>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#stackpanel%e3%81%ae%e6%8c%bf%e5%85%a5"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >StackPanelの挿入</a>
+            </li>
+          <li>
+              <a
+                href="#grid%e3%81%ae%e6%8c%bf%e5%85%a5"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >Gridの挿入</a>
+            </li>
+          <li>
+              <a
+                href="#grid%e3%81%ab%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%82%92%e9%85%8d%e7%bd%ae"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >Gridにコントロールを配置</a>
+            </li>
+          </ul>
+  
+              
             </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
@@ -284,16 +302,6 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">Adding Some Layout</span>
-    </a>
-  </div>
-              
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
-    <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/"
-      
-    >
-      <span class="hx:min-w-0 [word-break:break-word]">Customizing the Avalonia Window</span>
     </a>
   </div>
               
@@ -355,9 +363,9 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/create-your-first-project/"
       
     >
@@ -365,7 +373,7 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/starter-tutorial/"
@@ -373,7 +381,7 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     >
       <span class="hx:min-w-0 [word-break:break-word]">Starter Tutorial</span>
     </a>
-      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
+      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
   </div>
               <div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
@@ -386,6 +394,16 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      href="/docs/getting-started/starter-tutorial/adding-some-layout---%E3%82%B3%E3%83%94%E3%83%BC/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Adding Some Layout コピー</span>
+    </a>
+  </div>
+              
             </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
@@ -393,16 +411,6 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">Adding Some Layout</span>
-    </a>
-  </div>
-              
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
-    <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/"
-      
-    >
-      <span class="hx:min-w-0 [word-break:break-word]">Customizing the Avalonia Window</span>
     </a>
   </div>
               
@@ -483,15 +491,15 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="目次">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">このページの内容</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90">プロジェクトを作成
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#stackpanel%e3%81%ae%e6%8c%bf%e5%85%a5">StackPanelの挿入
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e5%ae%9f%e8%a1%8c">プロジェクトを実行
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#grid%e3%81%ae%e6%8c%bf%e5%85%a5">Gridの挿入
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%e4%bd%95%e3%81%8c%e5%90%ab%e3%81%be%e3%82%8c%e3%81%a6%e3%81%84%e3%81%be%e3%81%99%e3%81%8b">プロジェクトに何が含まれていますか？
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#grid%e3%81%ab%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%82%92%e9%85%8d%e7%bd%ae">Gridにコントロールを配置
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -514,60 +522,28 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
         </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
           <a href="/docs/getting-started/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Getting Started</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Create Your First Project</div>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="/docs/getting-started/starter-tutorial/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Starter Tutorial</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Adding Some Layout コピー</div>
   </div>
 
         <div class="content">
           
-          <h1>最初のプロジェクトを作成</h1><p>お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。<br>
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。</p>
-<h2>プロジェクトを作成<span class="hx:absolute hx:-mt-20" id="プロジェクトを作成"></span>
-    <a href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。<br>
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。<br>
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。</p>
-
-
-
-
-
-
-
-
-
-
-<div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain">
-  <div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800" role="tablist"><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-0" role="tab" type="button" aria-controls="tabs-panel-tabs-00-0" aria-selected="true" tabindex="0" data-state="selected"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-1" role="tab" type="button" aria-controls="tabs-panel-tabs-00-1" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio Code</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-2" role="tab" type="button" aria-controls="tabs-panel-tabs-00-2" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Rider</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-3" role="tab" type="button" aria-controls="tabs-panel-tabs-00-3" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Command line</span></span></button></div>
-</div>
-<div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-0" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-0" aria-hidden="false" tabindex="0" data-state="selected"><ol>
-<li>Visual Studioで、<strong>ファイル → 新規作成 → プロジェクト/ソリューション</strong> をクリック</li>
-<li>検索ボックスに Avalonia と入力</li>
-<li>検索結果から <strong>Avalonia .NET MVVM App</strong> を選択。<br>
-複数の選択肢が表示される場合はC#向けのものを選び、<strong>次へ</strong> をクリック</li>
-<li>プロジェクト名を 「GetStartedApp」 に設定</li>
-<li>必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック</li>
-<li>使用する <strong>.NET</strong> のバージョンをフレームワークとして選択</li>
-<li>ターゲットプラットフォームを選択する画面が表示された場合は、<strong>Desktop</strong> を選択</li>
-<li><strong>作成</strong> をクリック</li>
+          <h1>レイアウトの追加</h1><p>現時点で、温度変換アプリには、ウィンドウの中央にボタンが1つ配置されています。<br>
+各Avaloniaウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけのため、これ以上要素を追加することはできません。（レイアウト領域についての詳しい説明は次のページ「Controls reference page」で扱います。）<br>
+ウィンドウ内に複数のUI要素を配置するには、<strong>レイアウトコントロール</strong>を使用する必要があります。<br>
+レイアウトコントロールについての詳しい情報は、<a href="https://docs.avaloniaui.net/controls"target="_blank" rel="noopener">Layout controls</a>を参照してください。</p>
+<h2>StackPanelの挿入<span class="hx:absolute hx:-mt-20" id="stackpanelの挿入"></span>
+    <a href="#stackpanel%e3%81%ae%e6%8c%bf%e5%85%a5" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>StackPanel レイアウトコントロールを使用すると、ボタンの上にテキストを配置できます。</p>
+<ol>
+<li><strong>MainWindow.axaml</strong> ファイル内で、Buttonを<code>&lt;StackPanel&gt;...&lt;/StackPanel&gt;</code>で囲んでください。</li>
 </ol>
-</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-1" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-1" aria-hidden="true"><ol>
-<li>Visual Studio Codeで、コマンドパレットを開き、Windowsでは <code>Ctrl + Shift + P</code>、macOSでは <code>⌘ + Shift + P</code> を押す</li>
-<li>検索ボックスに .NET と入力</li>
-<li>検索結果から <strong>.NET: New Project&hellip;</strong> を選択</li>
-<li>プロジェクトテンプレートの一覧から <strong>Avalonia MVVM App</strong> を選択</li>
-<li>プロジェクトを保存するディレクトリを指定</li>
-<li>プロジェクト名を 「GetStartedApp」 に設定</li>
-<li><strong>Create project</strong> をクリック</li>
-</ol>
-</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-2" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-2" aria-hidden="true"><ol>
-<li>Riderのスタート画面で <strong>New Solution</strong> を選択</li>
-<li>サイドバーで下にスクロールし、Custom Templatesの中から <strong>Avalonia .NET MVVM App</strong> を選択</li>
-<li>ソリューション名を 「GetStartedApp」 に設定</li>
-<li><strong>Create</strong> をクリック</li>
-</ol>
-</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-3" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-3" aria-hidden="true"><p>次のコマンドを実行</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><pre><code>dotnet new avalonia.mvvm -o GetStartedApp</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><pre><code>&lt;StackPanel&gt;
+	&lt;Button&gt;Calculate&lt;/Button&gt;
+&lt;/StackPanel&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
     title="コードをコピー"
@@ -579,38 +555,28 @@ MVVMは、Avaloniaアプリケーションを開発する際に推奨されて�
   </button>
 </div>
 </div>
-<p>新しく作成された**「GetStartedApp」**という名前のフォルダを確認してください。その中に、新しいプロジェクトファイルが含まれています。</p>
-</div></div>
-
-<h2>プロジェクトを実行<span class="hx:absolute hx:-mt-20" id="プロジェクトを実行"></span>
-    <a href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e5%ae%9f%e8%a1%8c" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2>
-
-
-
-
-
-
-
-
-
-<div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain">
-  <div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800" role="tablist"><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-0" role="tab" type="button" aria-controls="tabs-panel-tabs-01-0" aria-selected="true" tabindex="0" data-state="selected"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-1" role="tab" type="button" aria-controls="tabs-panel-tabs-01-1" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio Code</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-2" role="tab" type="button" aria-controls="tabs-panel-tabs-01-2" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Rider</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-3" role="tab" type="button" aria-controls="tabs-panel-tabs-01-3" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Command line</span></span></button></div>
-</div>
-<div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-0" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-0" aria-hidden="false" tabindex="0" data-state="selected">上部ツールバーで、実行ボタンの横にある「GetStartedApp」を選択、その後、<strong>Run（実行）</strong> をクリックします。<br>
-ソリューションがビルドされ、アプリが新しいウィンドウで起動します。<br>
-デフォルトでは、「Welcome to Avalonia!」という文字列が表示されるようになっています。
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-1" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-1" aria-hidden="true"><ol>
-<li>サイドナビゲーションバーで <strong>Run and Debug（実行とデバッグ）</strong> を選択</li>
-<li>デバッガーの選択を求められた場合は、<strong>C#</strong> を選択</li>
-<li><strong>Run and Debug</strong> をクリック
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></li>
+<ol start="2">
+<li>ボタンの上に<code>TextBlock</code>を追加してください。<br>
+（デフォルトの <strong>MainWindow.axaml</strong> にあった <code>TextBlock</code> タグを思い出すかもしれません。これはウィンドウ内にテキストを表示するものです。）<br>
+<code>TextBlock</code> の属性を次のように設定してください。</li>
 </ol>
-</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-2" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-2" aria-hidden="true">上部ツールバーで <strong>Run（実行）</strong> をクリックしてください。<br>
-ソリューションがビルドされ、アプリが新しいウィンドウで起動します。デフォルトでは、「Welcome to Avalonia!」という文字列が表示されます。
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-3" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-3" aria-hidden="true"><p><strong>「GetStartedApp」</strong> プロジェクトがあるディレクトリに移動し、次のコマンドを実行</p>
+<ul>
+<li>Margin=&ldquo;5&rdquo;</li>
+<li>FontSize=&ldquo;24&rdquo;</li>
+<li>HorizontalAlignment=&ldquo;Center&rdquo;</li>
+<li>Text=&ldquo;Temperature Converter&rdquo;</li>
+</ul>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><pre><code>dotnet run</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><pre><code>&lt;StackPanel&gt;
+    &lt;TextBlock Margin=&#34;5&#34;
+               FontSize=&#34;24&#34; 
+               HorizontalAlignment=&#34;Center&#34;
+               Text=&#34;Temperature Converter&#34;&gt;
+    &lt;/TextBlock&gt;
+
+    &lt;Button HorizontalAlignment=&#34;Center&#34;&gt;Calculate&lt;/Button&gt;
+&lt;/StackPanel&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
     title="コードをコピー"
@@ -622,51 +588,173 @@ MVVMは、Avaloniaアプリケーションを開発する際に推奨されて�
   </button>
 </div>
 </div>
-<p>ソリューションがビルドされ、アプリが新しいウィンドウで起動します。デフォルトでは、「Welcome to Avalonia!」という文字列が表示されます。
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></p>
-</div></div>
+<ol start="3">
+<li>
+<p>アプリを実行するか、プレビューアーで確認してください。<br>
+「Temperature Converter」という文字が、「Calculate」ボタンの上に表示されているはずです。
+<img src="https://docs.avaloniaui.net/assets/images/temperature-converter-text-only-47a9bf06b79989bd4368fdf55460d9d4.png" alt="Temperature Converter"  loading="lazy" /></p>
+</li>
+<li>
+<p><code>TextBlock</code> を <code>&lt;Border&gt;...&lt;/Border&gt;</code> タグで囲み、<code>Border</code> の属性を次のように設定してください。</p>
+</li>
+</ol>
+<ul>
+<li>Margin=&ldquo;5&rdquo;</li>
+<li>CornerRadius=&ldquo;10&rdquo;</li>
+<li>Background=&ldquo;LightBlue&rdquo;</li>
+</ul>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<h2>プロジェクトに何が含まれていますか？<span class="hx:absolute hx:-mt-20" id="プロジェクトに何が含まれていますか"></span>
-    <a href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%e4%bd%95%e3%81%8c%e5%90%ab%e3%81%be%e3%82%8c%e3%81%a6%e3%81%84%e3%81%be%e3%81%99%e3%81%8b" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>MVVMテンプレートは、次のような構成のプロジェクトを作成します。</p>
-<table>
-  <thead>
-      <tr>
-          <th>ファイル/フォルダ</th>
-          <th>目的</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>App.axaml</td>
-          <td>アプリケーション全体のリソースやスタイルを定義する。.axaml 拡張子は Avalonia XAML の略</td>
-      </tr>
-      <tr>
-          <td>ViewModels/</td>
-          <td>メインウィンドウのデータやロジックを保持する <code>MainWindowViewModel</code> が含まれている</td>
-      </tr>
-      <tr>
-          <td>Views/MainWindow.axaml</td>
-          <td>メインウィンドウの外観を定義するXAMLマークアップ</td>
-      </tr>
-      <tr>
-          <td>Views/MainWindow.axaml.cs</td>
-          <td>メインウィンドウのコードビハインドファイル</td>
-      </tr>
-      <tr>
-          <td>Program.cs</td>
-          <td>Avaloniaを構成し起動するアプリケーションのエントリーポイント</td>
-      </tr>
-  </tbody>
-</table>
+<div><pre><code>&lt;StackPanel&gt;
+    &lt;Border Margin=&#34;5&#34; CornerRadius=&#34;10&#34; Background=&#34;LightBlue&#34;&gt;
+        &lt;TextBlock Margin=&#34;5&#34;
+                   FontSize=&#34;24&#34; 
+                   HorizontalAlignment=&#34;Center&#34;
+                   Text=&#34;Temperature Converter&#34;&gt;
+        &lt;/TextBlock&gt;
+    &lt;/Border&gt;
+
+    &lt;Button HorizontalAlignment=&#34;Center&#34;&gt;Calculate&lt;/Button&gt;
+&lt;/StackPanel&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="5">
+<li>アプリを実行するか、プレビューアーで確認してください。<br>
+「Temperature Converter」という文字が、角の丸い青い枠（ボックス）の中に表示されているはずです。
+<img src="https://docs.avaloniaui.net/assets/images/temperature-converter-blue-border-85016c962da4c300f410b2bb07adc855.png" alt="Temperature Converter"  loading="lazy" /></li>
+</ol>
+<div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200">
+  <div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"><svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+
+  <div class="hx:w-full hx:min-w-0 hx:leading-7">
+    <div class="hx:mt-6 hx:leading-7 hx:first:mt-0"><code>StackPanel</code>はデフォルトだと、要素を縦方向（垂直）に並べます。<br>
+<code>Orientation</code> 属性を <code>Horizontal</code> に設定すると、横方向（水平方向）に並べることができます。</div>
+  </div>
+</div>
+
+<h2>Gridの挿入<span class="hx:absolute hx:-mt-20" id="gridの挿入"></span>
+    <a href="#grid%e3%81%ae%e6%8c%bf%e5%85%a5" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>次は、Grid レイアウトコントロールを追加します。Gridは、行と列で構成されたセルを作成し、そのセルの中に様々なコントロールを配置できるレイアウトです。</p>
+<ol>
+<li>アプリが実行中であれば停止</li>
+<li><strong>MainWindow.axaml</strong> ファイル内で、Buttonを<code>&lt;/Border&gt;</code>と<code>&lt;Button&gt;</code>の間に、<code>&lt;Grid&gt;...&lt;/Grid&gt;</code>タグを挿入してください。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&lt;StackPanel&gt;
+    &lt;Border Margin=&#34;5&#34; CornerRadius=&#34;10&#34; Background=&#34;LightBlue&#34;&gt;
+        &lt;TextBlock Margin=&#34;5&#34;
+            HorizontalAlignment=&#34;Center&#34;
+            FontSize=&#34;24&#34;
+            Text=&#34;Temperature Converter&#34;&gt;
+        &lt;/TextBlock&gt;
+    &lt;/Border&gt;
+    &lt;Grid ShowGridLines=&#34;True&#34; Margin=&#34;5&#34; 
+          ColumnDefinitions=&#34;120, 100&#34;
+          RowDefinitions=&#34;Auto, Auto&#34;&gt;
+    &lt;/Grid&gt;
+    &lt;Button HorizontalAlignment=&#34;Center&#34;&gt;Calculate&lt;/Button&gt;
+&lt;/StackPanel&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>ここでは、<code>Gird</code>にいくつかの属性を設定しています。</p>
+<ul>
+<li>2列2行</li>
+<li>グリッド線の表示</li>
+<li>セルの高さは内容に合わせて自動的に調整<br>
+空のセルの高さは自動設定では0になるため、現在はGirdが水平な一本線として表示される
+<img src="https://docs.avaloniaui.net/assets/images/temperature-converter-empty-grid-aeb17bff021cec2752962e88e448a48b.png" alt="Temperature Converter"  loading="lazy" /></li>
+</ul>
+<h2>Gridにコントロールを配置<span class="hx:absolute hx:-mt-20" id="gridにコントロールを配置"></span>
+    <a href="#grid%e3%81%ab%e3%82%b3%e3%83%b3%e3%83%88%e3%83%ad%e3%83%bc%e3%83%ab%e3%82%92%e9%85%8d%e7%bd%ae" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><ol>
+<li><code>Grid.Row</code> と <code>Grid.Column</code> 属性で対象のセルを指定し、<code>Grid</code> の左側のセルに <code>TextBlock</code> コントロールを配置、「Celsius」と「Fahrenheit」を表示します。</li>
+</ol>
+<div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200">
+  <div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"><svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+
+  <div class="hx:w-full hx:min-w-0 hx:leading-7">
+    <div class="hx:mt-6 hx:leading-7 hx:first:mt-0"><code>Grid</code>の行や列の番号は0から始まります。最初のセルは0番として扱われます。</div>
+  </div>
+</div>
+
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>        &lt;Grid ShowGridLines=&#34;True&#34; Margin=&#34;5&#34; 
+              ColumnDefinitions=&#34;120, 100&#34;
+              RowDefinitions=&#34;Auto, Auto&#34;&gt;
+            &lt;TextBlock Grid.Row=&#34;0&#34; Grid.Column=&#34;0&#34; Margin=&#34;10&#34;&gt;Celsius&lt;/TextBlock&gt;
+            &lt;TextBlock Grid.Row=&#34;1&#34; Grid.Column=&#34;0&#34; Margin=&#34;10&#34;&gt;Fahrenheit&lt;/TextBlock&gt;
+        &lt;/Grid&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="2">
+<li>次に、<code>Grid.Row</code> と <code>Grid.Column</code> 属性で対象のセルを指定し、<code>Grid</code> の右側のセルに <code>TextBox</code> コントロールを配置します。<br>
+<code>TextBox</code> は、キーボードから文字を入力できる入力欄を作成するためのコントロールです。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>        &lt;Grid ShowGridLines=&#34;True&#34; Margin=&#34;5&#34; 
+              ColumnDefinitions=&#34;120, 100&#34;
+              RowDefinitions=&#34;Auto, Auto&#34;&gt;
+            &lt;TextBlock Grid.Row=&#34;0&#34; Grid.Column=&#34;0&#34; Margin=&#34;10&#34;&gt;Celsius&lt;/TextBlock&gt;
+            &lt;TextBox Grid.Row=&#34;0&#34; Grid.Column=&#34;1&#34; Margin=&#34;0 5&#34; Text=&#34;0&#34;/&gt;
+            &lt;TextBlock Grid.Row=&#34;1&#34; Grid.Column=&#34;0&#34; Margin=&#34;10&#34;&gt;Fahrenheit&lt;/TextBlock&gt;
+            &lt;TextBox Grid.Row=&#34;1&#34; Grid.Column=&#34;1&#34; Margin=&#34;0 5&#34; Text=&#34;0&#34;/&gt;
+        &lt;/Grid&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="3">
+<li>アプリを実行するか、プレビューアーで確認してください。<br>
+グリッド線で区切られたセル内に、追加したテキストと入力ボックスがウィンドウ上に表示されているはずです。
+<img src="https://docs.avaloniaui.net/assets/images/temperature-converter-filled-grid-8b9aa9fda86ac3ba2f2a4c8bef3244a7.png" alt="Temperature Converter"  loading="lazy" />
+次のページでは、アプリのウィンドウサイズを調整する方法を学びます。</li>
+</ol>
 
         </div>
-        
-    <div class="hx:mt-12 hx:mb-8 hx:block hx:text-xs hx:text-gray-500 hx:ltr:text-right hx:rtl:text-left hx:dark:text-gray-400">
-      最終更新日 <time datetime="2026-06-30T18:49:26.000Z">June 30, 2026</time></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/docs/getting-started/setup-your-ide/"
-        title="Set up your IDE"
+        <div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="/docs/getting-started/starter-tutorial/adding-a-control/"
+        title="Adding a Control"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
-      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Set up your IDE</a></div>
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Adding a Control</a><a
+        href="/docs/getting-started/starter-tutorial/adding-some-layout/"
+        title="Adding Some Layout"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >Adding Some Layout<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
       </main>
     </article>
   </div>
