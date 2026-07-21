@@ -9,14 +9,72 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Avalonia Docs JP</title>
-  <meta name="description" content="Avaloniaウィンドウのカスタマイズ現在翻訳中です。" /><link rel="canonical" href="http://localhost:1313/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/" itemprop="url" />
+  <meta name="description" content="Avaloniaウィンドウのカスタマイズ先ほど説明したように、Avaloniaウィンドウはターゲットプラットフォーム上でアプリが実行される領域です。
+.axamlファイルでは、&lt;Window&gt;...&lt;/Window&gt;タグを使って、そのウィンドウ内に表示する内容を定義します。
+レイアウト領域 Avaloniaのウィンドウには、次の4つのレイアウト領域があります。
+① Margin（マージン）
+② Border（ボーダー）
+③ Padding（パディング）
+⑤ Content（コンテンツ）
+先ほど使用したStackPanelのような一部のレイアウトコントロールは、同じ4つのレイアウト領域を持つ、より小さなサブウィンドウを作成します。 Avaloniaの各ウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけです。 ウィンドウの既定の属性 コントロールと同様に、Avaloniaのウィンドウには、表示方法や動作を定義するXML属性があります。
+MainWindow.axamlを先頭までスクロールし、&lt;Window&gt;タグを確認してください。そこには、いくつかのデフォルト設定が記述されています。
+&lt;Window xmlns=&#34;https://github.com/avaloniaui&#34;xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;xmlns:vm=&#34;using:GetStartedApp.ViewModels&#34;xmlns:d=&#34;http://schemas.microsoft.com/expression/blend/2008&#34;xmlns:mc=&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;mc:Ignorable=&#34;d&#34; d:DesignWidth=&#34;800&#34; d:DesignHeight=&#34;450&#34;x:Class=&#34;GetStartedApp.Views.MainWindow&#34;x:DataType=&#34;vm:MainWindowViewModel&#34;Icon=&#34;/Assets/avalonia-logo.ico&#34;Title=&#34;GetStartedApp&#34;&gt; &lt;Window&gt;タグの初めの数行では、Avaloniaで使用されるXML名前空間が宣言されています。
+使用されている名前空間のエイリアスはx,vm,d,mcです。 ウィンドウの属性を設定 ウィンドウのサイズを調整して、横向き（ランドスケープ）ではなく縦向き（ポートレート）で表示できるようにしてみましょう。これは、アプリ開発時に、モバイル端末での表示を確認する際によく行われる操作です。" /><link rel="canonical" href="http://localhost:1313/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/" itemprop="url" />
 
 <meta property="og:title" content="">
 <meta
   property="og:description"
   content="
     
-      Avaloniaウィンドウのカスタマイズ現在翻訳中です。
+      Avaloniaウィンドウのカスタマイズ先ほど説明したように、Avaloniaウィンドウはターゲットプラットフォーム上でアプリが実行される領域です。
+.axamlファイルでは、&lt;Window&gt;...&lt;/Window&gt;タグを使って、そのウィンドウ内に表示する内容を定義します。
+レイアウト領域
+    Avaloniaのウィンドウには、次の4つのレイアウト領域があります。
+① Margin（マージン）
+② Border（ボーダー）
+③ Padding（パディング）
+⑤ Content（コンテンツ）
+先ほど使用したStackPanelのような一部のレイアウトコントロールは、同じ4つのレイアウト領域を持つ、より小さなサブウィンドウを作成します。
+
+  
+
+  
+    Avaloniaの各ウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけです。
+  
+
+
+ウィンドウの既定の属性
+    コントロールと同様に、Avaloniaのウィンドウには、表示方法や動作を定義するXML属性があります。
+MainWindow.axamlを先頭までスクロールし、&lt;Window&gt;タグを確認してください。そこには、いくつかのデフォルト設定が記述されています。
+
+
+&lt;Window xmlns=&#34;https://github.com/avaloniaui&#34;
+        xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;
+        xmlns:vm=&#34;using:GetStartedApp.ViewModels&#34;
+        xmlns:d=&#34;http://schemas.microsoft.com/expression/blend/2008&#34;
+        xmlns:mc=&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;
+        mc:Ignorable=&#34;d&#34; d:DesignWidth=&#34;800&#34; d:DesignHeight=&#34;450&#34;
+        x:Class=&#34;GetStartedApp.Views.MainWindow&#34;
+        x:DataType=&#34;vm:MainWindowViewModel&#34;
+        Icon=&#34;/Assets/avalonia-logo.ico&#34;
+        Title=&#34;GetStartedApp&#34;&gt;
+  
+    
+
+  
+
+
+
+  
+
+  
+    &lt;Window&gt;タグの初めの数行では、Avaloniaで使用されるXML名前空間が宣言されています。
+使用されている名前空間のエイリアスはx,vm,d,mcです。
+  
+
+
+ウィンドウの属性を設定
+    ウィンドウのサイズを調整して、横向き（ランドスケープ）ではなく縦向き（ポートレート）で表示できるようにしてみましょう。これは、アプリ開発時に、モバイル端末での表示を確認する際によく行われる操作です。
     
   ">
 <meta
@@ -27,14 +85,39 @@
 <meta property="og:url" content="http://localhost:1313/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/"><meta property="article:section" content="docs">
 
 
+<meta
+  property="article:modified_time"
+  content="2026-07-20T17:45:06+09:00">
+
 
 
   <meta itemprop="name" content="Avalonia Docs JP">
-  <meta itemprop="description" content="Avaloniaウィンドウのカスタマイズ現在翻訳中です。">
-  <meta itemprop="wordCount" content="1">
+  <meta itemprop="description" content="Avaloniaウィンドウのカスタマイズ先ほど説明したように、Avaloniaウィンドウはターゲットプラットフォーム上でアプリが実行される領域です。
+.axamlファイルでは、&lt;Window&gt;...&lt;/Window&gt;タグを使って、そのウィンドウ内に表示する内容を定義します。
+レイアウト領域 Avaloniaのウィンドウには、次の4つのレイアウト領域があります。
+① Margin（マージン）
+② Border（ボーダー）
+③ Padding（パディング）
+⑤ Content（コンテンツ）
+先ほど使用したStackPanelのような一部のレイアウトコントロールは、同じ4つのレイアウト領域を持つ、より小さなサブウィンドウを作成します。 Avaloniaの各ウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけです。 ウィンドウの既定の属性 コントロールと同様に、Avaloniaのウィンドウには、表示方法や動作を定義するXML属性があります。
+MainWindow.axamlを先頭までスクロールし、&lt;Window&gt;タグを確認してください。そこには、いくつかのデフォルト設定が記述されています。
+&lt;Window xmlns=&#34;https://github.com/avaloniaui&#34;xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;xmlns:vm=&#34;using:GetStartedApp.ViewModels&#34;xmlns:d=&#34;http://schemas.microsoft.com/expression/blend/2008&#34;xmlns:mc=&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;mc:Ignorable=&#34;d&#34; d:DesignWidth=&#34;800&#34; d:DesignHeight=&#34;450&#34;x:Class=&#34;GetStartedApp.Views.MainWindow&#34;x:DataType=&#34;vm:MainWindowViewModel&#34;Icon=&#34;/Assets/avalonia-logo.ico&#34;Title=&#34;GetStartedApp&#34;&gt; &lt;Window&gt;タグの初めの数行では、Avaloniaで使用されるXML名前空間が宣言されています。
+使用されている名前空間のエイリアスはx,vm,d,mcです。 ウィンドウの属性を設定 ウィンドウのサイズを調整して、横向き（ランドスケープ）ではなく縦向き（ポートレート）で表示できるようにしてみましょう。これは、アプリ開発時に、モバイル端末での表示を確認する際によく行われる操作です。">
+  <meta itemprop="dateModified" content="2026-07-20T17:45:06+09:00">
+  <meta itemprop="wordCount" content="58">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Avalonia Docs JP">
-  <meta name="twitter:description" content="Avaloniaウィンドウのカスタマイズ現在翻訳中です。">
+  <meta name="twitter:description" content="Avaloniaウィンドウのカスタマイズ先ほど説明したように、Avaloniaウィンドウはターゲットプラットフォーム上でアプリが実行される領域です。
+.axamlファイルでは、&lt;Window&gt;...&lt;/Window&gt;タグを使って、そのウィンドウ内に表示する内容を定義します。
+レイアウト領域 Avaloniaのウィンドウには、次の4つのレイアウト領域があります。
+① Margin（マージン）
+② Border（ボーダー）
+③ Padding（パディング）
+⑤ Content（コンテンツ）
+先ほど使用したStackPanelのような一部のレイアウトコントロールは、同じ4つのレイアウト領域を持つ、より小さなサブウィンドウを作成します。 Avaloniaの各ウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけです。 ウィンドウの既定の属性 コントロールと同様に、Avaloniaのウィンドウには、表示方法や動作を定義するXML属性があります。
+MainWindow.axamlを先頭までスクロールし、&lt;Window&gt;タグを確認してください。そこには、いくつかのデフォルト設定が記述されています。
+&lt;Window xmlns=&#34;https://github.com/avaloniaui&#34;xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;xmlns:vm=&#34;using:GetStartedApp.ViewModels&#34;xmlns:d=&#34;http://schemas.microsoft.com/expression/blend/2008&#34;xmlns:mc=&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;mc:Ignorable=&#34;d&#34; d:DesignWidth=&#34;800&#34; d:DesignHeight=&#34;450&#34;x:Class=&#34;GetStartedApp.Views.MainWindow&#34;x:DataType=&#34;vm:MainWindowViewModel&#34;Icon=&#34;/Assets/avalonia-logo.ico&#34;Title=&#34;GetStartedApp&#34;&gt; &lt;Window&gt;タグの初めの数行では、Avaloniaで使用されるXML名前空間が宣言されています。
+使用されている名前空間のエイリアスはx,vm,d,mcです。 ウィンドウの属性を設定 ウィンドウのサイズを調整して、横向き（ランドスケープ）ではなく縦向き（ポートレート）で表示できるようにしてみましょう。これは、アプリ開発時に、モバイル端末での表示を確認する際によく行われる操作です。">
 <link href="/css/compiled/main.css" rel="stylesheet" />
     <link href="/css/variables.css" rel="stylesheet" />
     <link href="/css/custom.css" rel="stylesheet" />
@@ -208,7 +291,25 @@
     </a>
   </div>
   
-    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'></ul>
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#%e3%83%ac%e3%82%a4%e3%82%a2%e3%82%a6%e3%83%88%e9%a0%98%e5%9f%9f"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >レイアウト領域</a>
+            </li>
+          <li>
+              <a
+                href="#%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e6%97%a2%e5%ae%9a%e3%81%ae%e5%b1%9e%e6%80%a7"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >ウィンドウの既定の属性</a>
+            </li>
+          <li>
+              <a
+                href="#%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e5%b1%9e%e6%80%a7%e3%82%92%e8%a8%ad%e5%ae%9a"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >ウィンドウの属性を設定</a>
+            </li>
+          </ul>
   
               
             </li></ul>
@@ -395,7 +496,27 @@
 </div></div></aside>
     
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="目次">
-    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">このページの内容</p><ul></ul>
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">このページの内容</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%ac%e3%82%a4%e3%82%a2%e3%82%a6%e3%83%88%e9%a0%98%e5%9f%9f">レイアウト領域
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e6%97%a2%e5%ae%9a%e3%81%ae%e5%b1%9e%e6%80%a7">ウィンドウの既定の属性
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e5%b1%9e%e6%80%a7%e3%82%92%e8%a8%ad%e5%ae%9a">ウィンドウの属性を設定
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%97%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e7%94%bb%e9%9d%a2%e3%81%ae%e3%82%b5%e3%82%a4%e3%82%ba%e3%82%92%e8%a8%ad%e5%ae%9a">プレビュー画面のサイズを設定
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%ae%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%82%b5%e3%82%a4%e3%82%ba%e3%82%92%e8%a8%ad%e5%ae%9a">実行時のウィンドウサイズを設定
+        </a>
+      </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
         <button id="backToTop" tabindex="-1" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
           <span>トップにスクロール</span>
@@ -424,10 +545,141 @@
 
         <div class="content">
           
-          <h1>Avaloniaウィンドウのカスタマイズ</h1><p>現在翻訳中です。</p>
+          <h1>Avaloniaウィンドウのカスタマイズ</h1><p>先ほど<a href="../">説明</a>したように、Avaloniaウィンドウはターゲットプラットフォーム上でアプリが実行される領域です。<br>
+.axamlファイルでは、<code>&lt;Window&gt;...&lt;/Window&gt;</code>タグを使って、そのウィンドウ内に表示する内容を定義します。</p>
+<h2>レイアウト領域<span class="hx:absolute hx:-mt-20" id="レイアウト領域"></span>
+    <a href="#%e3%83%ac%e3%82%a4%e3%82%a2%e3%82%a6%e3%83%88%e9%a0%98%e5%9f%9f" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>Avaloniaのウィンドウには、次の4つのレイアウト領域があります。<br>
+① Margin（マージン）<br>
+② Border（ボーダー）<br>
+③ Padding（パディング）<br>
+⑤ Content（コンテンツ）<br>
+先ほど使用した<code>StackPanel</code>のような一部のレイアウトコントロールは、同じ4つのレイアウト領域を持つ、より小さなサブウィンドウを作成します。
+<div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200">
+  <div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"><svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+
+  <div class="hx:w-full hx:min-w-0 hx:leading-7">
+    <div class="hx:mt-6 hx:leading-7 hx:first:mt-0">Avaloniaの各ウィンドウでは、コンテンツ領域に配置できるコントロールは1つだけです。</div>
+  </div>
+</div>
+</p>
+<h2>ウィンドウの既定の属性<span class="hx:absolute hx:-mt-20" id="ウィンドウの既定の属性"></span>
+    <a href="#%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e6%97%a2%e5%ae%9a%e3%81%ae%e5%b1%9e%e6%80%a7" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>コントロールと同様に、Avaloniaのウィンドウには、表示方法や動作を定義するXML属性があります。<br>
+<strong>MainWindow.axaml</strong>を先頭までスクロールし、<code>&lt;Window&gt;</code>タグを確認してください。そこには、いくつかのデフォルト設定が記述されています。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&lt;Window xmlns=&#34;https://github.com/avaloniaui&#34;
+        xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;
+        xmlns:vm=&#34;using:GetStartedApp.ViewModels&#34;
+        xmlns:d=&#34;http://schemas.microsoft.com/expression/blend/2008&#34;
+        xmlns:mc=&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;
+        mc:Ignorable=&#34;d&#34; d:DesignWidth=&#34;800&#34; d:DesignHeight=&#34;450&#34;
+        x:Class=&#34;GetStartedApp.Views.MainWindow&#34;
+        x:DataType=&#34;vm:MainWindowViewModel&#34;
+        Icon=&#34;/Assets/avalonia-logo.ico&#34;
+        Title=&#34;GetStartedApp&#34;&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200">
+  <div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"><svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+
+  <div class="hx:w-full hx:min-w-0 hx:leading-7">
+    <div class="hx:mt-6 hx:leading-7 hx:first:mt-0"><code>&lt;Window&gt;</code>タグの初めの数行では、Avaloniaで使用されるXML名前空間が宣言されています。<br>
+使用されている名前空間のエイリアスは<code>x</code>,<code>vm</code>,<code>d</code>,<code>mc</code>です。</div>
+  </div>
+</div>
+
+<h2>ウィンドウの属性を設定<span class="hx:absolute hx:-mt-20" id="ウィンドウの属性を設定"></span>
+    <a href="#%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%81%ae%e5%b1%9e%e6%80%a7%e3%82%92%e8%a8%ad%e5%ae%9a" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>ウィンドウのサイズを調整して、横向き（ランドスケープ）ではなく縦向き（ポートレート）で表示できるようにしてみましょう。これは、アプリ開発時に、モバイル端末での表示を確認する際によく行われる操作です。</p>
+<h3>プレビュー画面のサイズを設定<span class="hx:absolute hx:-mt-20" id="プレビュー画面のサイズを設定"></span>
+    <a href="#%e3%83%97%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e7%94%bb%e9%9d%a2%e3%81%ae%e3%82%b5%e3%82%a4%e3%82%ba%e3%82%92%e8%a8%ad%e5%ae%9a" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h3><p><code>d:DesignWidth</code>と<code>d:DesignHeight</code>の値を変更すると、実行時にウィンドウには影響を与えず、ライブプレビュー上でのアプリの表示サイズだけを変更できます。</p>
+<ol>
+<li><strong>MainWindow.axaml</strong>を開き、<code>&lt;Window&gt;...&lt;/Window&gt;</code>タグ内にある次の行を見つけてください。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>mc:Ignorable=&#34;d&#34; d:DesignWidth=&#34;800&#34; d:DesignHeight=&#34;450&#34;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="2">
+<li><code>d:DesignWidth</code>を<code>400</code>に設定</li>
+<li>プレビュー画面を確認してください。プレビューがモバイル端末の表示に近い状態になっていることが確認できます。</li>
+</ol>
+<p>詳しくは、<a href="https://docs.avaloniaui.net/docs/app-development/xaml-preview-and-design-settings"target="_blank" rel="noopener">previewing your UI design</a>を参照してください。</p>
+<p><img src="https://docs.avaloniaui.net/assets/images/temperature-converter-portrait-orientation-933867e63d9c915fd3f6ca54a598d20b.png" alt="Temperature Converter"  loading="lazy" /></p>
+<h3>実行時のウィンドウサイズを設定<span class="hx:absolute hx:-mt-20" id="実行時のウィンドウサイズを設定"></span>
+    <a href="#%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%ae%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%82%b5%e3%82%a4%e3%82%ba%e3%82%92%e8%a8%ad%e5%ae%9a" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h3><p>実行時のアプリウィンドウのサイズを調整するには、<code>&lt;Window&gt;</code>の開始タグに<code>Width</code>属性と<code>Height</code>属性を追加する必要があります。</p>
+<ol>
+<li><strong>MainWindow.axaml</strong>を開き、<code>&lt;Window&gt;</code>の開始タグの最後の行に移動してください。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>Title=&#34;GetStartedApp&#34;&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="2">
+<li>その行の下に、属性<code>Width=&quot;400&quot;</code>と<code>Height=&quot;450&quot;</code>を追加してください。<br>
+山かっこ（&gt;）を最後に移動して<code>&lt;Window&gt;</code>開始タグが正しく閉じられるようにしてください。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>Title=&#34;GetStartedApp&#34;
+Width=&#34;400&#34;
+Height=&#34;450&#34;&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="3">
+<li>アプリを実行してください。アプリのウィンドウがモバイル端末の表示に近い形になっていることを確認できます。
+<div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200">
+  <div class="hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2"><svg height=1.2em class="hx:inline-block hx:align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+
+  <div class="hx:w-full hx:min-w-0 hx:leading-7">
+    <div class="hx:mt-6 hx:leading-7 hx:first:mt-0">多くのモバイルプラットフォームでは、実際にはウィンドウサイズの指定は無視され、画面に合わせてウィンドウが自動的にサイズ調整されます。開発時に、対象となる各プラットフォームごとに個別のサイズを設定する必要はありません。</div>
+  </div>
+</div>
+</li>
+</ol>
+<p>次のページでは、ボタンがクリックに反応するように、イベント処理を作成する方法を学びます。</p>
 
         </div>
-        <div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        
+    <div class="hx:mt-12 hx:mb-8 hx:block hx:text-xs hx:text-gray-500 hx:ltr:text-right hx:rtl:text-left hx:dark:text-gray-400">
+      最終更新日 <time datetime="2026-07-20T17:45:06.000Z">July 20, 2026</time></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
         href="/docs/getting-started/starter-tutorial/adding-some-layout/"
         title="Adding Some Layout"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
