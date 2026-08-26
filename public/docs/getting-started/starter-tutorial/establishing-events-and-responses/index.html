@@ -9,65 +9,100 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Avalonia Docs JP</title>
-  <meta name="description" content="最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成 最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
-Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック 検索ボックスに Avalonia と入力 検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック プロジェクト名を 「GetStartedApp」 に設定 必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック 使用する .NET のバージョンをフレームワークとして選択 ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択 作成 をクリック Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す 検索ボックスに .NET と入力 検索結果から .NET: New Project… を選択 プロジェクトテンプレートの一覧から Avalonia MVVM App を選択 プロジェクトを保存するディレクトリを指定 プロジェクト名を 「GetStartedApp」 に設定 Create project をクリック Riderのスタート画面で New Solution を選択 サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択 ソリューション名を 「GetStartedApp」 に設定 Create をクリック 次のコマンドを実行" /><link rel="canonical" href="http://localhost:1313/docs/getting-started/create-your-first-project/" itemprop="url" />
+  <meta name="description" content="イベントとレスポンスの構築温度変換アプリは、見た目としては十分に機能しそうな状態になりましたが、まだ何も動作していません。次に必要なのは、「計算（Calculate）」ボタンが、クリックなどのユーザー操作に応答できるようにすることです。
+コードビハインドを使用したイベントハンドラーの作成 XAMLファイルは、C#のソースファイルと関連付けることができます。このファイルには、ボタンのイベント処理コードを記述します。この仕組みは「コードビハインド」と呼ばれます。
+IDEでプロジェクトディレクトリを開き、Views → MainWindow.axaml → MainWindow.axaml.cs を参照します。これは、メインウィンドウのXAMLに対応するC#ソースファイルです。 2. MainWindow.axaml.csを開く
+3. まず、ファイルの先頭にある using ディレクティブを確認してください。
+この時点では、using Avalonia.Controls; という1行だけが存在しているはずです。以下の 2 つの using ディレクティブを追加します。
+using Avalonia.Interactivity;using System.Diagnostics; ファイル内のさらに下の方にある public partial class MainWindow : Window という行を探します。
+このクラスには現在、メインウィンドウ用のコンストラクタである public MainWindow() のみが含まれています。コンストラクタの下に、次のコードを追加します。 private void Button_OnClick(object? sender, RoutedEventArgs e){Debug.WriteLine(&#34;Click!&#34;);} C#ファイルは次のようになっているはずです。 using Avalonia.Controls;using Avalonia.Interactivity;using System.Diagnostics;namespace GetStartedApp.Views;public partial class MainWindow : Window{public MainWindow(){InitializeComponent();}private void Button_OnClick(object? sender, RoutedEventArgs e){Debug.WriteLine(&#34;Click!&#34;);}} XAMLファイルのMainWindow.axamlを開いてください。 ファイルの下の方にある&lt;Button&gt;を探してください。 &lt;Button&gt; タグに Click 属性を追加し、Button_OnClick に関連付けてください。次のようにします。 &lt;Button HorizontalAlignment=&#34;Center&#34; Click=&#34;Button_OnClick&#34;&gt;Calculate&lt;/Button&gt; イベントハンドラーが正常に動作することを確認 イベントハンドラーが正しく作成されていることを確認するために、Calculateボタンをクリックしたときに、デバッグ出力に「Click!」と表示されているか確認します。" /><link rel="canonical" href="http://localhost:1313/docs/getting-started/starter-tutorial/establishing-events-and-responses/" itemprop="url" />
 
 <meta property="og:title" content="">
 <meta
   property="og:description"
   content="
     
-      最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成
-    最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
+      イベントとレスポンスの構築温度変換アプリは、見た目としては十分に機能しそうな状態になりましたが、まだ何も動作していません。次に必要なのは、「計算（Calculate）」ボタンが、クリックなどのユーザー操作に応答できるようにすることです。
+コードビハインドを使用したイベントハンドラーの作成
+    XAMLファイルは、C#のソースファイルと関連付けることができます。このファイルには、ボタンのイベント処理コードを記述します。この仕組みは「コードビハインド」と呼ばれます。
+
+IDEでプロジェクトディレクトリを開き、Views → MainWindow.axaml → MainWindow.axaml.cs を参照します。これは、メインウィンドウのXAMLに対応するC#ソースファイルです。
+
+
+2. MainWindow.axaml.csを開く
+3. まず、ファイルの先頭にある using ディレクティブを確認してください。
+この時点では、using Avalonia.Controls; という1行だけが存在しているはずです。以下の 2 つの using ディレクティブを追加します。
+
+
+using Avalonia.Interactivity;
+using System.Diagnostics;
+  
+    
+
+  
 
 
 
+ファイル内のさらに下の方にある public partial class MainWindow : Window という行を探します。
+このクラスには現在、メインウィンドウ用のコンストラクタである public MainWindow() のみが含まれています。コンストラクタの下に、次のコードを追加します。
 
 
 
+private void Button_OnClick(object? sender, RoutedEventArgs e)
+{
+    Debug.WriteLine(&#34;Click!&#34;);
+}
+  
+    
+
+  
 
 
 
+C#ファイルは次のようになっているはずです。
 
 
-  Visual StudioVisual Studio CodeRiderCommand line
+
+using Avalonia.Controls;
+using Avalonia.Interactivity;
+using System.Diagnostics;
+
+namespace GetStartedApp.Views;
+
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+    }
+    
+    private void Button_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Debug.WriteLine(&#34;Click!&#34;);
+    }
+}
+  
+    
+
+  
 
 
-Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック
-検索ボックスに Avalonia と入力
-検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック
-プロジェクト名を 「GetStartedApp」 に設定
-必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック
-使用する .NET のバージョンをフレームワークとして選択
-ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択
-作成 をクリック
+
+XAMLファイルのMainWindow.axamlを開いてください。
+ファイルの下の方にある&lt;Button&gt;を探してください。
+&lt;Button&gt; タグに Click 属性を追加し、Button_OnClick に関連付けてください。次のようにします。
 
 
-Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す
-検索ボックスに .NET と入力
-検索結果から .NET: New Project&hellip; を選択
-プロジェクトテンプレートの一覧から Avalonia MVVM App を選択
-プロジェクトを保存するディレクトリを指定
-プロジェクト名を 「GetStartedApp」 に設定
-Create project をクリック
+
+&lt;Button HorizontalAlignment=&#34;Center&#34; Click=&#34;Button_OnClick&#34;&gt;Calculate&lt;/Button&gt;
+  
+    
+
+  
 
 
-Riderのスタート画面で New Solution を選択
-サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択
-ソリューション名を 「GetStartedApp」 に設定
-Create をクリック
-
-次のコマンドを実行
+イベントハンドラーが正常に動作することを確認
+    イベントハンドラーが正しく作成されていることを確認するために、Calculateボタンをクリックしたときに、デバッグ出力に「Click!」と表示されているか確認します。
     
   ">
 <meta
@@ -75,34 +110,29 @@ Create をクリック
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1313/docs/getting-started/create-your-first-project/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1313/docs/getting-started/starter-tutorial/establishing-events-and-responses/"><meta property="article:section" content="docs">
 
-
-<meta
-  property="article:modified_time"
-  content="2026-06-30T18:49:26+09:00">
 
 
 
   <meta itemprop="name" content="Avalonia Docs JP">
-  <meta itemprop="description" content="最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成 最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
-Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック 検索ボックスに Avalonia と入力 検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック プロジェクト名を 「GetStartedApp」 に設定 必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック 使用する .NET のバージョンをフレームワークとして選択 ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択 作成 をクリック Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す 検索ボックスに .NET と入力 検索結果から .NET: New Project… を選択 プロジェクトテンプレートの一覧から Avalonia MVVM App を選択 プロジェクトを保存するディレクトリを指定 プロジェクト名を 「GetStartedApp」 に設定 Create project をクリック Riderのスタート画面で New Solution を選択 サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択 ソリューション名を 「GetStartedApp」 に設定 Create をクリック 次のコマンドを実行">
-  <meta itemprop="dateModified" content="2026-06-30T18:49:26+09:00">
-  <meta itemprop="wordCount" content="154">
+  <meta itemprop="description" content="イベントとレスポンスの構築温度変換アプリは、見た目としては十分に機能しそうな状態になりましたが、まだ何も動作していません。次に必要なのは、「計算（Calculate）」ボタンが、クリックなどのユーザー操作に応答できるようにすることです。
+コードビハインドを使用したイベントハンドラーの作成 XAMLファイルは、C#のソースファイルと関連付けることができます。このファイルには、ボタンのイベント処理コードを記述します。この仕組みは「コードビハインド」と呼ばれます。
+IDEでプロジェクトディレクトリを開き、Views → MainWindow.axaml → MainWindow.axaml.cs を参照します。これは、メインウィンドウのXAMLに対応するC#ソースファイルです。 2. MainWindow.axaml.csを開く
+3. まず、ファイルの先頭にある using ディレクティブを確認してください。
+この時点では、using Avalonia.Controls; という1行だけが存在しているはずです。以下の 2 つの using ディレクティブを追加します。
+using Avalonia.Interactivity;using System.Diagnostics; ファイル内のさらに下の方にある public partial class MainWindow : Window という行を探します。
+このクラスには現在、メインウィンドウ用のコンストラクタである public MainWindow() のみが含まれています。コンストラクタの下に、次のコードを追加します。 private void Button_OnClick(object? sender, RoutedEventArgs e){Debug.WriteLine(&#34;Click!&#34;);} C#ファイルは次のようになっているはずです。 using Avalonia.Controls;using Avalonia.Interactivity;using System.Diagnostics;namespace GetStartedApp.Views;public partial class MainWindow : Window{public MainWindow(){InitializeComponent();}private void Button_OnClick(object? sender, RoutedEventArgs e){Debug.WriteLine(&#34;Click!&#34;);}} XAMLファイルのMainWindow.axamlを開いてください。 ファイルの下の方にある&lt;Button&gt;を探してください。 &lt;Button&gt; タグに Click 属性を追加し、Button_OnClick に関連付けてください。次のようにします。 &lt;Button HorizontalAlignment=&#34;Center&#34; Click=&#34;Button_OnClick&#34;&gt;Calculate&lt;/Button&gt; イベントハンドラーが正常に動作することを確認 イベントハンドラーが正しく作成されていることを確認するために、Calculateボタンをクリックしたときに、デバッグ出力に「Click!」と表示されているか確認します。">
+  <meta itemprop="wordCount" content="108">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Avalonia Docs JP">
-  <meta name="twitter:description" content="最初のプロジェクトを作成お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。
-プロジェクトを作成 最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。
-Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル → 新規作成 → プロジェクト/ソリューション をクリック 検索ボックスに Avalonia と入力 検索結果から Avalonia .NET MVVM App を選択。
-複数の選択肢が表示される場合はC#向けのものを選び、次へ をクリック プロジェクト名を 「GetStartedApp」 に設定 必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック 使用する .NET のバージョンをフレームワークとして選択 ターゲットプラットフォームを選択する画面が表示された場合は、Desktop を選択 作成 をクリック Visual Studio Codeで、コマンドパレットを開き、Windowsでは Ctrl &#43; Shift &#43; P、macOSでは ⌘ &#43; Shift &#43; P を押す 検索ボックスに .NET と入力 検索結果から .NET: New Project… を選択 プロジェクトテンプレートの一覧から Avalonia MVVM App を選択 プロジェクトを保存するディレクトリを指定 プロジェクト名を 「GetStartedApp」 に設定 Create project をクリック Riderのスタート画面で New Solution を選択 サイドバーで下にスクロールし、Custom Templatesの中から Avalonia .NET MVVM App を選択 ソリューション名を 「GetStartedApp」 に設定 Create をクリック 次のコマンドを実行">
+  <meta name="twitter:description" content="イベントとレスポンスの構築温度変換アプリは、見た目としては十分に機能しそうな状態になりましたが、まだ何も動作していません。次に必要なのは、「計算（Calculate）」ボタンが、クリックなどのユーザー操作に応答できるようにすることです。
+コードビハインドを使用したイベントハンドラーの作成 XAMLファイルは、C#のソースファイルと関連付けることができます。このファイルには、ボタンのイベント処理コードを記述します。この仕組みは「コードビハインド」と呼ばれます。
+IDEでプロジェクトディレクトリを開き、Views → MainWindow.axaml → MainWindow.axaml.cs を参照します。これは、メインウィンドウのXAMLに対応するC#ソースファイルです。 2. MainWindow.axaml.csを開く
+3. まず、ファイルの先頭にある using ディレクティブを確認してください。
+この時点では、using Avalonia.Controls; という1行だけが存在しているはずです。以下の 2 つの using ディレクティブを追加します。
+using Avalonia.Interactivity;using System.Diagnostics; ファイル内のさらに下の方にある public partial class MainWindow : Window という行を探します。
+このクラスには現在、メインウィンドウ用のコンストラクタである public MainWindow() のみが含まれています。コンストラクタの下に、次のコードを追加します。 private void Button_OnClick(object? sender, RoutedEventArgs e){Debug.WriteLine(&#34;Click!&#34;);} C#ファイルは次のようになっているはずです。 using Avalonia.Controls;using Avalonia.Interactivity;using System.Diagnostics;namespace GetStartedApp.Views;public partial class MainWindow : Window{public MainWindow(){InitializeComponent();}private void Button_OnClick(object? sender, RoutedEventArgs e){Debug.WriteLine(&#34;Click!&#34;);}} XAMLファイルのMainWindow.axamlを開いてください。 ファイルの下の方にある&lt;Button&gt;を探してください。 &lt;Button&gt; タグに Click 属性を追加し、Button_OnClick に関連付けてください。次のようにします。 &lt;Button HorizontalAlignment=&#34;Center&#34; Click=&#34;Button_OnClick&#34;&gt;Calculate&lt;/Button&gt; イベントハンドラーが正常に動作することを確認 イベントハンドラーが正しく作成されていることを確認するために、Calculateボタンをクリックしたときに、デバッグ出力に「Click!」と表示されているか確認します。">
 <link href="/css/compiled/main.css" rel="stylesheet" />
     <link href="/css/variables.css" rel="stylesheet" />
     <link href="/css/custom.css" rel="stylesheet" />
@@ -225,38 +255,17 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/create-your-first-project/"
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">Create Your First Project</span>
     </a>
   </div>
-  
-    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-              <a
-                href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >プロジェクトを作成</a>
-            </li>
-          <li>
-              <a
-                href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e5%ae%9f%e8%a1%8c"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >プロジェクトを実行</a>
-            </li>
-          <li>
-              <a
-                href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%e4%bd%95%e3%81%8c%e5%90%ab%e3%81%be%e3%82%8c%e3%81%a6%e3%81%84%e3%81%be%e3%81%99%e3%81%8b"
-                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
-              >プロジェクトに何が含まれていますか？</a>
-            </li>
-          </ul>
-  
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/starter-tutorial/"
@@ -264,7 +273,7 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     >
       <span class="hx:min-w-0 [word-break:break-word]">Starter Tutorial</span>
     </a>
-      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
+      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
   </div>
               <div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
@@ -297,15 +306,30 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
       href="/docs/getting-started/starter-tutorial/establishing-events-and-responses/"
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">Establishing Events and Responses</span>
     </a>
   </div>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#%e3%82%b3%e3%83%bc%e3%83%89%e3%83%93%e3%83%8f%e3%82%a4%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%ae%e4%bd%9c%e6%88%90"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >コードビハインドを使用したイベントハンドラーの作成</a>
+            </li>
+          <li>
+              <a
+                href="#%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%8c%e6%ad%a3%e5%b8%b8%e3%81%ab%e5%8b%95%e4%bd%9c%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8%e3%82%92%e7%a2%ba%e8%aa%8d"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >イベントハンドラーが正常に動作することを確認</a>
+            </li>
+          </ul>
+  
               
             </li></ul>
       </div>
@@ -365,9 +389,9 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/create-your-first-project/"
       
     >
@@ -375,7 +399,7 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/docs/getting-started/starter-tutorial/"
@@ -383,7 +407,7 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     >
       <span class="hx:min-w-0 [word-break:break-word]">Starter Tutorial</span>
     </a>
-      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
+      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="セクションの切り替え" aria-expanded="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
   </div>
               <div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
@@ -416,9 +440,9 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
     </a>
   </div>
               
-            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
       href="/docs/getting-started/starter-tutorial/establishing-events-and-responses/"
       
     >
@@ -503,15 +527,11 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="目次">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">このページの内容</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90">プロジェクトを作成
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%82%b3%e3%83%bc%e3%83%89%e3%83%93%e3%83%8f%e3%82%a4%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%ae%e4%bd%9c%e6%88%90">コードビハインドを使用したイベントハンドラーの作成
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e5%ae%9f%e8%a1%8c">プロジェクトを実行
-        </a>
-      </li>
-      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%e4%bd%95%e3%81%8c%e5%90%ab%e3%81%be%e3%82%8c%e3%81%a6%e3%81%84%e3%81%be%e3%81%99%e3%81%8b">プロジェクトに何が含まれていますか？
+        <a class="hx:font-medium hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%8c%e6%ad%a3%e5%b8%b8%e3%81%ab%e5%8b%95%e4%bd%9c%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8%e3%82%92%e7%a2%ba%e8%aa%8d">イベントハンドラーが正常に動作することを確認
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -534,21 +554,115 @@ Visual StudioVisual Studio CodeRiderCommand line Visual Studioで、ファイル
         </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
           <a href="/docs/getting-started/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Getting Started</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Create Your First Project</div>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="/docs/getting-started/starter-tutorial/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Starter Tutorial</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Establishing Events and Responses</div>
   </div>
 
         <div class="content">
           
-          <h1>最初のプロジェクトを作成</h1><p>お好みのIDEまたはコマンドラインを使って、MVVMテンプレートを利用した最初のAvaloniaアプリケーションを作成し、実行してみましょう。<br>
-このガイドでは、テンプレートから新しいAvaloniaアプリを作成し、実際に実行するまでの手順を説明します。ガイドを終える頃には、Avaloniaで作成したアプリケーションのウィンドウが画面に表示されるようになります。</p>
-<h2>プロジェクトを作成<span class="hx:absolute hx:-mt-20" id="プロジェクトを作成"></span>
-    <a href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>最初のプロジェクトでは、Model-View-ViewModel（MVVM）テンプレートを使用します。<br>
-このテンプレートは、MVVMパターンに基づいたプロジェクトを作成します。<br>
-MVVMは、Avaloniaアプリケーションを開発する際に推奨されている設計パターンです。</p>
+          <h1>イベントとレスポンスの構築</h1><p>温度変換アプリは、見た目としては十分に機能しそうな状態になりましたが、まだ何も動作していません。次に必要なのは、「計算（Calculate）」ボタンが、クリックなどのユーザー操作に応答できるようにすることです。</p>
+<h2>コードビハインドを使用したイベントハンドラーの作成<span class="hx:absolute hx:-mt-20" id="コードビハインドを使用したイベントハンドラーの作成"></span>
+    <a href="#%e3%82%b3%e3%83%bc%e3%83%89%e3%83%93%e3%83%8f%e3%82%a4%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%ae%e4%bd%9c%e6%88%90" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>XAMLファイルは、C#のソースファイルと関連付けることができます。このファイルには、ボタンのイベント処理コードを記述します。この仕組みは「コードビハインド」と呼ばれます。</p>
+<ol>
+<li>IDEでプロジェクトディレクトリを開き、<strong>Views → MainWindow.axaml → MainWindow.axaml.cs</strong> を参照します。これは、メインウィンドウのXAMLに対応するC#ソースファイルです。</li>
+</ol>
+<p><img src="https://docs.avaloniaui.net/assets/images/mainwindow-codebehind-location-27ab6a5285a425b2a0506feab04399d3.png" alt="Temperature Converter"  loading="lazy" />
+2. <strong>MainWindow.axaml.cs</strong>を開く<br>
+3. まず、ファイルの先頭にある <code>using</code> ディレクティブを確認してください。<br>
+この時点では、<code>using Avalonia.Controls;</code> という1行だけが存在しているはずです。以下の 2 つの <code>using</code> ディレクティブを追加します。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
+<div><pre><code>using Avalonia.Interactivity;
+using System.Diagnostics;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="4">
+<li>ファイル内のさらに下の方にある <code>public partial class MainWindow : Window</code> という行を探します。<br>
+このクラスには現在、メインウィンドウ用のコンストラクタである <code>public MainWindow()</code> のみが含まれています。コンストラクタの下に、次のコードを追加します。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
+<div><pre><code>private void Button_OnClick(object? sender, RoutedEventArgs e)
+{
+    Debug.WriteLine(&#34;Click!&#34;);
+}</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="5">
+<li>C#ファイルは次のようになっているはずです。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
+<div><pre><code>using Avalonia.Controls;
+using Avalonia.Interactivity;
+using System.Diagnostics;
 
+namespace GetStartedApp.Views;
+
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+    }
+    
+    private void Button_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Debug.WriteLine(&#34;Click!&#34;);
+    }
+}</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ol start="6">
+<li>XAMLファイルの<code>MainWindow.axaml</code>を開いてください。</li>
+<li>ファイルの下の方にある<code>&lt;Button&gt;</code>を探してください。</li>
+<li><code>&lt;Button&gt;</code> タグに <code>Click</code> 属性を追加し、<code>Button_OnClick</code> に関連付けてください。次のようにします。</li>
+</ol>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&lt;Button HorizontalAlignment=&#34;Center&#34; Click=&#34;Button_OnClick&#34;&gt;Calculate&lt;/Button&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="コードをコピー"
+    aria-label="コードをコピー"
+    data-copied-label="コピーしました！"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h2>イベントハンドラーが正常に動作することを確認<span class="hx:absolute hx:-mt-20" id="イベントハンドラーが正常に動作することを確認"></span>
+    <a href="#%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%8c%e6%ad%a3%e5%b8%b8%e3%81%ab%e5%8b%95%e4%bd%9c%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8%e3%82%92%e7%a2%ba%e8%aa%8d" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>イベントハンドラーが正しく作成されていることを確認するために、<code>Calculate</code>ボタンをクリックしたときに、デバッグ出力に「Click!」と表示されているか確認します。</p>
 
 
 
@@ -556,137 +670,32 @@ MVVMは、Avaloniaアプリケーションを開発する際に推奨されて�
 
 
 <div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain">
-  <div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800" role="tablist"><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-0" role="tab" type="button" aria-controls="tabs-panel-tabs-00-0" aria-selected="true" tabindex="0" data-state="selected"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-1" role="tab" type="button" aria-controls="tabs-panel-tabs-00-1" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio Code</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-2" role="tab" type="button" aria-controls="tabs-panel-tabs-00-2" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Rider</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-3" role="tab" type="button" aria-controls="tabs-panel-tabs-00-3" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Command line</span></span></button></div>
+  <div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800" role="tablist"><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-0" role="tab" type="button" aria-controls="tabs-panel-tabs-00-0" aria-selected="true" tabindex="0" data-state="selected"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-00-1" role="tab" type="button" aria-controls="tabs-panel-tabs-00-1" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span> Rider</span></span></button></div>
 </div>
 <div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-0" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-0" aria-hidden="false" tabindex="0" data-state="selected"><ol>
-<li>Visual Studioで、<strong>ファイル → 新規作成 → プロジェクト/ソリューション</strong> をクリック</li>
-<li>検索ボックスに Avalonia と入力</li>
-<li>検索結果から <strong>Avalonia .NET MVVM App</strong> を選択。<br>
-複数の選択肢が表示される場合はC#向けのものを選び、<strong>次へ</strong> をクリック</li>
-<li>プロジェクト名を 「GetStartedApp」 に設定</li>
-<li>必要に応じて保存先（ターゲットディレクトリ）を変更し、次へ をクリック</li>
-<li>使用する <strong>.NET</strong> のバージョンをフレームワークとして選択</li>
-<li>ターゲットプラットフォームを選択する画面が表示された場合は、<strong>Desktop</strong> を選択</li>
-<li><strong>作成</strong> をクリック</li>
+<li>デフォルトでは分割ビューの下にある<strong>Output</strong>ウィンドウを開き、<strong>Show output from:</strong> のドロップダウンメニューから<strong>Debug</strong>を選択</li>
+<li>アプリを実行</li>
+<li>実行中のアプリ画面で、<strong>Calculate</strong>ボタンを何度かクリック</li>
+<li><strong>Output</strong>ウィンドウに「Click!」と表示される
+<img src="https://docs.avaloniaui.net/assets/images/vs-debug-output-click-a209fc02507a08a74bf7d4c0227bf4a2.png" alt=""  loading="lazy" />
+次のページでは、摂氏の温度を華氏に変換する計算式を実装する方法を学びます。</li>
 </ol>
 </div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-1" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-1" aria-hidden="true"><ol>
-<li>Visual Studio Codeで、コマンドパレットを開き、Windowsでは <code>Ctrl + Shift + P</code>、macOSでは <code>⌘ + Shift + P</code> を押す</li>
-<li>検索ボックスに .NET と入力</li>
-<li>検索結果から <strong>.NET: New Project&hellip;</strong> を選択</li>
-<li>プロジェクトテンプレートの一覧から <strong>Avalonia MVVM App</strong> を選択</li>
-<li>プロジェクトを保存するディレクトリを指定</li>
-<li>プロジェクト名を 「GetStartedApp」 に設定</li>
-<li><strong>Create project</strong> をクリック</li>
+<li>GetStartedApp をデバッグモードで実行
+<img src="https://docs.avaloniaui.net/assets/images/rider-run-debug-mode-4a4de5d2ea4ff03bbca29520aba66747.png" alt=""  loading="lazy" /></li>
+<li>画面下部のパネルにある<strong>Debug Output</strong>タブを開く</li>
+<li>実行中のアプリ画面で<strong>Calculate</strong>ボタンを何度かクリック</li>
+<li>Riderのデバック出力に「Click!」と表示される</li>
 </ol>
-</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-2" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-2" aria-hidden="true"><ol>
-<li>Riderのスタート画面で <strong>New Solution</strong> を選択</li>
-<li>サイドバーで下にスクロールし、Custom Templatesの中から <strong>Avalonia .NET MVVM App</strong> を選択</li>
-<li>ソリューション名を 「GetStartedApp」 に設定</li>
-<li><strong>Create</strong> をクリック</li>
-</ol>
-</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-00-3" role="tabpanel" aria-labelledby="tabs-tab-tabs-00-3" aria-hidden="true"><p>次のコマンドを実行</p>
-<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+<p>次のページでは、摂氏の温度を華氏に変換する計算式を実装する方法を学びます。</p></div></div>
 
-<div><pre><code>dotnet new avalonia.mvvm -o GetStartedApp</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
-  <button
-    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="コードをコピー"
-    aria-label="コードをコピー"
-    data-copied-label="コピーしました！"
-  >
-    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
-<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
-  </button>
-</div>
-</div>
-<p>新しく作成された**「GetStartedApp」**という名前のフォルダを確認してください。その中に、新しいプロジェクトファイルが含まれています。</p>
-</div></div>
-
-<h2>プロジェクトを実行<span class="hx:absolute hx:-mt-20" id="プロジェクトを実行"></span>
-    <a href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%92%e5%ae%9f%e8%a1%8c" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2>
-
-
-
-
-
-
-
-
-
-<div class="hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain">
-  <div class="hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800" role="tablist"><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-0" role="tab" type="button" aria-controls="tabs-panel-tabs-01-0" aria-selected="true" tabindex="0" data-state="selected"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-1" role="tab" type="button" aria-controls="tabs-panel-tabs-01-1" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Visual Studio Code</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-2" role="tab" type="button" aria-controls="tabs-panel-tabs-01-2" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Rider</span></span></button><button class="hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset" id="tabs-tab-tabs-01-3" role="tab" type="button" aria-controls="tabs-panel-tabs-01-3" aria-selected="false" tabindex="-1"><span class="hx:inline-flex hx:items-center hx:gap-1.5"><span>Command line</span></span></button></div>
-</div>
-<div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-0" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-0" aria-hidden="false" tabindex="0" data-state="selected">上部ツールバーで、実行ボタンの横にある「GetStartedApp」を選択、その後、<strong>Run（実行）</strong> をクリックします。<br>
-ソリューションがビルドされ、アプリが新しいウィンドウで起動します。<br>
-デフォルトでは、「Welcome to Avalonia!」という文字列が表示されるようになっています。
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-1" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-1" aria-hidden="true"><ol>
-<li>サイドナビゲーションバーで <strong>Run and Debug（実行とデバッグ）</strong> を選択</li>
-<li>デバッガーの選択を求められた場合は、<strong>C#</strong> を選択</li>
-<li><strong>Run and Debug</strong> をクリック
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></li>
-</ol>
-</div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-2" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-2" aria-hidden="true">上部ツールバーで <strong>Run（実行）</strong> をクリックしてください。<br>
-ソリューションがビルドされ、アプリが新しいウィンドウで起動します。デフォルトでは、「Welcome to Avalonia!」という文字列が表示されます。
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></div><div class="hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block" id="tabs-panel-tabs-01-3" role="tabpanel" aria-labelledby="tabs-tab-tabs-01-3" aria-hidden="true"><p><strong>「GetStartedApp」</strong> プロジェクトがあるディレクトリに移動し、次のコマンドを実行</p>
-<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
-
-<div><pre><code>dotnet run</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
-  <button
-    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="コードをコピー"
-    aria-label="コードをコピー"
-    data-copied-label="コピーしました！"
-  >
-    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
-<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
-  </button>
-</div>
-</div>
-<p>ソリューションがビルドされ、アプリが新しいウィンドウで起動します。デフォルトでは、「Welcome to Avalonia!」という文字列が表示されます。
-<img src="https://docs.avaloniaui.net/assets/images/welcome-to-avalonia-2631137465e12ec00f3157f4f4d756b8.png" alt="IDE Setup"  loading="lazy" /></p>
-</div></div>
-
-<h2>プロジェクトに何が含まれていますか？<span class="hx:absolute hx:-mt-20" id="プロジェクトに何が含まれていますか"></span>
-    <a href="#%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%e4%bd%95%e3%81%8c%e5%90%ab%e3%81%be%e3%82%8c%e3%81%a6%e3%81%84%e3%81%be%e3%81%99%e3%81%8b" class="subheading-anchor" aria-label="このセクションへのパーマリンク"></a></h2><p>MVVMテンプレートは、次のような構成のプロジェクトを作成します。</p>
-<table>
-  <thead>
-      <tr>
-          <th>ファイル/フォルダ</th>
-          <th>目的</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>App.axaml</td>
-          <td>アプリケーション全体のリソースやスタイルを定義する。.axaml 拡張子は Avalonia XAML の略</td>
-      </tr>
-      <tr>
-          <td>ViewModels/</td>
-          <td>メインウィンドウのデータやロジックを保持する <code>MainWindowViewModel</code> が含まれている</td>
-      </tr>
-      <tr>
-          <td>Views/MainWindow.axaml</td>
-          <td>メインウィンドウの外観を定義するXAMLマークアップ</td>
-      </tr>
-      <tr>
-          <td>Views/MainWindow.axaml.cs</td>
-          <td>メインウィンドウのコードビハインドファイル</td>
-      </tr>
-      <tr>
-          <td>Program.cs</td>
-          <td>Avaloniaを構成し起動するアプリケーションのエントリーポイント</td>
-      </tr>
-  </tbody>
-</table>
 
         </div>
-        
-    <div class="hx:mt-12 hx:mb-8 hx:block hx:text-xs hx:text-gray-500 hx:ltr:text-right hx:rtl:text-left hx:dark:text-gray-400">
-      最終更新日 <time datetime="2026-06-30T18:49:26.000Z">June 30, 2026</time></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/docs/getting-started/setup-your-ide/"
-        title="Set up your IDE"
+        <div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/"
+        title="Customizing the Avalonia Window"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
-      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Set up your IDE</a></div>
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Customizing the Avalonia Window</a></div>
       </main>
     </article>
   </div>

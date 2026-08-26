@@ -517,5 +517,145 @@ Height=&amp;#34;450&amp;#34;&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div
       </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs/getting-started/starter-tutorial/establishing-events-and-responses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/getting-started/starter-tutorial/establishing-events-and-responses/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;イベントとレスポンスの構築&lt;/h1&gt;&lt;p&gt;温度変換アプリは、見た目としては十分に機能しそうな状態になりましたが、まだ何も動作していません。次に必要なのは、「計算（Calculate）」ボタンが、クリックなどのユーザー操作に応答できるようにすることです。&lt;/p&gt;
+&lt;h2&gt;コードビハインドを使用したイベントハンドラーの作成&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;コードビハインドを使用したイベントハンドラーの作成&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e3%82%b3%e3%83%bc%e3%83%89%e3%83%93%e3%83%8f%e3%82%a4%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%ae%e4%bd%9c%e6%88%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;XAMLファイルは、C#のソースファイルと関連付けることができます。このファイルには、ボタンのイベント処理コードを記述します。この仕組みは「コードビハインド」と呼ばれます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IDEでプロジェクトディレクトリを開き、&lt;strong&gt;Views → MainWindow.axaml → MainWindow.axaml.cs&lt;/strong&gt; を参照します。これは、メインウィンドウのXAMLに対応するC#ソースファイルです。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.avaloniaui.net/assets/images/mainwindow-codebehind-location-27ab6a5285a425b2a0506feab04399d3.png&#34; alt=&#34;Temperature Converter&#34;  loading=&#34;lazy&#34; /&gt;
+2. &lt;strong&gt;MainWindow.axaml.cs&lt;/strong&gt;を開く&lt;br&gt;
+3. まず、ファイルの先頭にある &lt;code&gt;using&lt;/code&gt; ディレクティブを確認してください。&lt;br&gt;
+この時点では、&lt;code&gt;using Avalonia.Controls;&lt;/code&gt; という1行だけが存在しているはずです。以下の 2 つの &lt;code&gt;using&lt;/code&gt; ディレクティブを追加します。&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;using Avalonia.Interactivity;
+using System.Diagnostics;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイル内のさらに下の方にある &lt;code&gt;public partial class MainWindow : Window&lt;/code&gt; という行を探します。&lt;br&gt;
+このクラスには現在、メインウィンドウ用のコンストラクタである &lt;code&gt;public MainWindow()&lt;/code&gt; のみが含まれています。コンストラクタの下に、次のコードを追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;private void Button_OnClick(object? sender, RoutedEventArgs e)
+{
+    Debug.WriteLine(&amp;#34;Click!&amp;#34;);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;C#ファイルは次のようになっているはずです。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;using Avalonia.Controls;
+using Avalonia.Interactivity;
+using System.Diagnostics;
+
+namespace GetStartedApp.Views;
+
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+    }
+    
+    private void Button_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Debug.WriteLine(&amp;#34;Click!&amp;#34;);
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;XAMLファイルの&lt;code&gt;MainWindow.axaml&lt;/code&gt;を開いてください。&lt;/li&gt;
+&lt;li&gt;ファイルの下の方にある&lt;code&gt;&amp;lt;Button&amp;gt;&lt;/code&gt;を探してください。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Button&amp;gt;&lt;/code&gt; タグに &lt;code&gt;Click&lt;/code&gt; 属性を追加し、&lt;code&gt;Button_OnClick&lt;/code&gt; に関連付けてください。次のようにします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;Button HorizontalAlignment=&amp;#34;Center&amp;#34; Click=&amp;#34;Button_OnClick&amp;#34;&amp;gt;Calculate&amp;lt;/Button&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;イベントハンドラーが正常に動作することを確認&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;イベントハンドラーが正常に動作することを確認&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%a9%e3%83%bc%e3%81%8c%e6%ad%a3%e5%b8%b8%e3%81%ab%e5%8b%95%e4%bd%9c%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8%e3%82%92%e7%a2%ba%e8%aa%8d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;イベントハンドラーが正しく作成されていることを確認するために、&lt;code&gt;Calculate&lt;/code&gt;ボタンをクリックしたときに、デバッグ出力に「Click!」と表示されているか確認します。&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class=&#34;hextra-scrollbar hx:overflow-x-auto hx:overflow-y-hidden hx:overscroll-x-contain&#34;&gt;
+  &lt;div class=&#34;hx:mt-4 hx:flex hx:w-max hx:min-w-full hx:border-b hx:border-gray-200 hx:pb-px hx:dark:border-neutral-800&#34; role=&#34;tablist&#34;&gt;&lt;button class=&#34;hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset&#34; id=&#34;tabs-tab-tabs-00-0&#34; role=&#34;tab&#34; type=&#34;button&#34; aria-controls=&#34;tabs-panel-tabs-00-0&#34; aria-selected=&#34;true&#34; tabindex=&#34;0&#34; data-state=&#34;selected&#34;&gt;&lt;span class=&#34;hx:inline-flex hx:items-center hx:gap-1.5&#34;&gt;&lt;span&gt;Visual Studio&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;&lt;button class=&#34;hextra-tabs-toggle hx:cursor-pointer hx:data-[state=selected]:border-primary-500 hx:data-[state=selected]:text-primary-600 hx:data-[state=selected]:dark:border-primary-500 hx:data-[state=selected]:dark:text-primary-600 hx:mr-2 hx:rounded-t hx:p-2 hx:font-medium hx:leading-5 hx:transition-colors hx:-mb-0.5 hx:select-none hx:border-b-2 hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-black hx:dark:text-gray-200 hx:dark:hover:border-neutral-800 hx:dark:hover:text-white hx:hextra-focus-visible-inset&#34; id=&#34;tabs-tab-tabs-00-1&#34; role=&#34;tab&#34; type=&#34;button&#34; aria-controls=&#34;tabs-panel-tabs-00-1&#34; aria-selected=&#34;false&#34; tabindex=&#34;-1&#34;&gt;&lt;span class=&#34;hx:inline-flex hx:items-center hx:gap-1.5&#34;&gt;&lt;span&gt; Rider&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;div class=&#34;hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block&#34; id=&#34;tabs-panel-tabs-00-0&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;tabs-tab-tabs-00-0&#34; aria-hidden=&#34;false&#34; tabindex=&#34;0&#34; data-state=&#34;selected&#34;&gt;&lt;ol&gt;
+&lt;li&gt;デフォルトでは分割ビューの下にある&lt;strong&gt;Output&lt;/strong&gt;ウィンドウを開き、&lt;strong&gt;Show output from:&lt;/strong&gt; のドロップダウンメニューから&lt;strong&gt;Debug&lt;/strong&gt;を選択&lt;/li&gt;
+&lt;li&gt;アプリを実行&lt;/li&gt;
+&lt;li&gt;実行中のアプリ画面で、&lt;strong&gt;Calculate&lt;/strong&gt;ボタンを何度かクリック&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Output&lt;/strong&gt;ウィンドウに「Click!」と表示される
+&lt;img src=&#34;https://docs.avaloniaui.net/assets/images/vs-debug-output-click-a209fc02507a08a74bf7d4c0227bf4a2.png&#34; alt=&#34;&#34;  loading=&#34;lazy&#34; /&gt;
+次のページでは、摂氏の温度を華氏に変換する計算式を実装する方法を学びます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;&lt;div class=&#34;hextra-tabs-panel hx:rounded-sm hx:pt-6 hx:hidden hx:data-[state=selected]:block&#34; id=&#34;tabs-panel-tabs-00-1&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;tabs-tab-tabs-00-1&#34; aria-hidden=&#34;true&#34;&gt;&lt;ol&gt;
+&lt;li&gt;GetStartedApp をデバッグモードで実行
+&lt;img src=&#34;https://docs.avaloniaui.net/assets/images/rider-run-debug-mode-4a4de5d2ea4ff03bbca29520aba66747.png&#34; alt=&#34;&#34;  loading=&#34;lazy&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;画面下部のパネルにある&lt;strong&gt;Debug Output&lt;/strong&gt;タブを開く&lt;/li&gt;
+&lt;li&gt;実行中のアプリ画面で&lt;strong&gt;Calculate&lt;/strong&gt;ボタンを何度かクリック&lt;/li&gt;
+&lt;li&gt;Riderのデバック出力に「Click!」と表示される&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;次のページでは、摂氏の温度を華氏に変換する計算式を実装する方法を学びます。&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
