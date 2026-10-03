@@ -902,5 +902,149 @@ public partial class MainWindow : Window
       </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs/getting-started/starter-tutorial/exercises/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs/getting-started/starter-tutorial/exercises/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Exercises&lt;/h1&gt;&lt;p&gt;温度変換アプリを作成したので、Avaloniaについての理解度を確認するために、次の3つの演習に挑戦してみましょう。&lt;/p&gt;
+&lt;h2&gt;演習1：既存の属性を変更する&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;演習1既存の属性を変更する&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%bc%94%e7%bf%921%e6%97%a2%e5%ad%98%e3%81%ae%e5%b1%9e%e6%80%a7%e3%82%92%e5%a4%89%e6%9b%b4%e3%81%99%e3%82%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;難易度：★&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;GetStartedApp&lt;/strong&gt; のグリッド線を見えないようにしてください。&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;ヒント&lt;/summary&gt;
+&lt;p&gt;MainWindow.axaml で &lt;code&gt;&amp;lt;Grid&amp;gt;&lt;/code&gt; を指定しました。&lt;/p&gt;
+&lt;/details&gt;
+　
+&lt;details&gt;
+&lt;summary&gt;解答&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;MainWindow.axaml&lt;/strong&gt; で &lt;code&gt;&amp;lt;Grid&amp;gt;&lt;/code&gt; の開始タグを探します。
+&lt;code&gt;ShowGridLines&lt;/code&gt; 属性を &lt;code&gt;False&lt;/code&gt; に変更してください。&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;Grid ShowGridLines=&amp;#34;False&amp;#34; Margin=&amp;#34;5&amp;#34; 
+  ColumnDefinitions=&amp;#34;120, 100&amp;#34;
+  RowDefinitions=&amp;#34;Auto, Auto, Auto&amp;#34;&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2&gt;演習2：新しい属性を追加する&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;演習2新しい属性を追加する&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%bc%94%e7%bf%922%e6%96%b0%e3%81%97%e3%81%84%e5%b1%9e%e6%80%a7%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;難易度：★★&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;GetStartedApp&lt;/strong&gt; の Fahrenheit（華氏）のテキストボックスに、ユーザーが文字を入力できないようにしてください。&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;ヒント①&lt;/summary&gt;
+&lt;p&gt;TextBox コントロールについて詳しく知るには、&lt;a href=&#34;https://docs.avaloniaui.net/api/avalonia/controls/textbox&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TextBoxのAPIリファレンス&lt;/a&gt;を確認してください。&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;ヒント②&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.avaloniaui.net/api/avalonia/controls/textbox&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TextBoxのAPIリファレンス&lt;/a&gt;を見ると、&lt;code&gt;IsReadOnly&lt;/code&gt; という属性があります。&lt;/p&gt;
+&lt;/details&gt;
+　
+&lt;details&gt;
+&lt;summary&gt;解答&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;MainWindow.axaml&lt;/strong&gt; でFahrenheit（華氏）のボックスに対応する &lt;code&gt;&amp;lt;TextBox&amp;gt;&lt;/code&gt; タグを探します。
+&lt;code&gt;IsReadOnly&lt;/code&gt; 属性を追加し、その値を &lt;code&gt;True&lt;/code&gt; に設定してください。&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;TextBox Grid.Row=&amp;#34;1&amp;#34; Grid.Column=&amp;#34;1&amp;#34; Margin=&amp;#34;0 5&amp;#34; Text=&amp;#34;0&amp;#34; Name=&amp;#34;Fahrenheit&amp;#34; IsReadOnly=&amp;#34;True&amp;#34;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2&gt;演習3：新しいイベント処理をプログラムする&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;演習3新しいイベント処理をプログラムする&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%bc%94%e7%bf%923%e6%96%b0%e3%81%97%e3%81%84%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e5%87%a6%e7%90%86%e3%82%92%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%e3%81%99%e3%82%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;難易度：★★★&lt;/strong&gt;&lt;br&gt;
+ユーザーが入力するたびに、&lt;strong&gt;GetStartedApp&lt;/strong&gt; が温度変換を計算するようにしてください。&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;ヒント①&lt;/summary&gt;
+&lt;p&gt;TextBox コントロールについて詳しく知るには、&lt;a href=&#34;https://docs.avaloniaui.net/api/avalonia/controls/textbox&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TextBoxのAPIリファレンス&lt;/a&gt;を確認してください。&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;ヒント②&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.avaloniaui.net/api/avalonia/controls/textbox&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TextBoxのAPIリファレンス&lt;/a&gt;を見ると、&lt;code&gt;TextChanged&lt;/code&gt; というイベントがあります。&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;ヒント③&lt;/summary&gt;
+&lt;p&gt;イベントハンドラーは、C# のコードビハインドである &lt;strong&gt;MainWindow.axaml.cs&lt;/strong&gt; に定義されています。&lt;br&gt;
+また、XAML ファイルである &lt;strong&gt;MainWindow.axaml&lt;/strong&gt; からも参照されています。&lt;/p&gt;
+&lt;/details&gt;
+　
+&lt;details&gt;
+&lt;summary&gt;解答&lt;/summary&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;MainWindow.axaml&lt;/strong&gt; でCelsius（摂氏）のボックスに対応する &lt;code&gt;&amp;lt;TextBox&amp;gt;&lt;/code&gt; タグを探します。
+&lt;code&gt;TextChanged&lt;/code&gt; イベントを追加し、その値を &lt;code&gt;Celsius_TextChanged&lt;/code&gt; などのイベント名を指定してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;TextBox Grid.Row=&amp;#34;0&amp;#34; Grid.Column=&amp;#34;1&amp;#34; Margin=&amp;#34;0 5&amp;#34; Text=&amp;#34;0&amp;#34; TextChanged=&amp;#34;Celsius_TextChanged&amp;#34; Name=&amp;#34;Celsius&amp;#34;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;MainWindow.axaml&lt;/strong&gt; で &lt;code&gt;&amp;lt;Button&amp;gt;&lt;/code&gt; から始まる行全体を削除してください。&lt;br&gt;
+この行はもう必要ありません。&lt;br&gt;
+&lt;del&gt;&lt;code&gt;&amp;lt;Button HorizontalAlignment=&amp;quot;Center&amp;quot; Click=&amp;quot;Button_OnClick&amp;quot;&amp;gt;Calculate&amp;lt;/Button&amp;gt;&lt;/code&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;MainWindow.axaml&lt;/strong&gt; で &lt;code&gt;private void&lt;/code&gt; から始まるイベントハンドラーの行を探します。
+イベント名を &lt;code&gt;Button_OnClick&lt;/code&gt; から、XAML ファイルで付けた名前に変更してください。&lt;br&gt;
+（例：&lt;code&gt;Celsius_TextChanged&lt;/code&gt; ）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;private void Celsius_TextChanged(object? sender, RoutedEventArgs e)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;アプリを実行して、Celsius（摂氏）のボックスに入力すると、Fahrenheit（華氏）のボックスの値が変化することを確認してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;オプション：さらなる改善&lt;/summary&gt;
+&lt;p&gt;Celsius のボックスで、空の状態や「-」だけの入力を受け付けられるようにするには、コードビハインドを次のように変更します。&lt;/p&gt;
+&lt;/details&gt;
+      </description>
+    </item>
+    
   </channel>
 </rss>

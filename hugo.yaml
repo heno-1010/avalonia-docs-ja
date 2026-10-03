@@ -21,3 +21,8 @@ params:
 services:
   googleAnalytics:
     ID: G-9KCRXJQ64E
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
