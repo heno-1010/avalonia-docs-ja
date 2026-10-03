@@ -25,25 +25,25 @@ Avaloniaのインストール、IDEの設定、そして最初のプロジェク
 >}}
 
 {{< card
-    link="/docs/getting-started/starter-tutorial/"
+    link="/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/"
     title="Avaloniaウィンドウのカスタマイズ"
     subtitle="ウィンドウのサイズ、タイトル、その他の属性を調整"
 >}}
 
 {{< card
-    link="/docs/getting-started/starter-tutorial/"
+    link="/docs/getting-started/starter-tutorial/establishing-events-and-responses/"
     title="イベントとレスポンスの構築"
     subtitle="ボタンのクリックに対応するイベントハンドラーを作成"
 >}}
 
 {{< card
-    link="/docs/getting-started/starter-tutorial/"
+    link="/docs/getting-started/starter-tutorial/converting-data/"
     title="データの変換"
     subtitle="ボタンがクリックされたとき、コードビハインドを使用して温度の値を変換"
 >}}
 
 {{< card
-    link="/docs/getting-started/starter-tutorial/"
+    link="/docs/getting-started/starter-tutorial/exercises/"
     title="演習"
     subtitle="3つのコーディング課題を通して、Avaloniaの理解度を確かめる"
 >}}
@@ -69,5 +69,5 @@ Visual StudioまたはJetBrains RiderにAvaloniaをインストールしたば�
 
 ``MainWindow.axaml`` 内のほぼすべての要素は、``<Window>...</Window>`` というXAMLタグの間に配置されます。  
 このタグはAvaloniaのウィンドウを表し、ターゲットとなるプラットフォーム上でアプリが実行される際の「画面（ウィンドウ）」そのものとなります。  
-Avaloniaのウィンドウをカスタマイズする方法については、[Avaloniaウィンドウのカスタマイズ](/docs/getting-started/starter-tutorial/)で詳しく解説します。  
+Avaloniaのウィンドウをカスタマイズする方法については、[Avaloniaウィンドウのカスタマイズ](/docs/getting-started/starter-tutorial/customizing-the-avalonia-window/)で詳しく解説します。  
 アプリにボタンを追加する方法を学ぶには、このチュートリアルの[次のページへ](/docs/getting-started/starter-tutorial/adding-a-control/)進んでください。

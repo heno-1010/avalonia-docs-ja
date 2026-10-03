@@ -911,7 +911,7 @@ public partial class MainWindow : Window
       <description>
         
         
-        &lt;h1&gt;Exercises&lt;/h1&gt;&lt;p&gt;温度変換アプリを作成したので、Avaloniaについての理解度を確認するために、次の3つの演習に挑戦してみましょう。&lt;/p&gt;
+        &lt;h1&gt;演習&lt;/h1&gt;&lt;p&gt;温度変換アプリを作成したので、Avaloniaについての理解度を確認するために、次の3つの演習に挑戦してみましょう。&lt;/p&gt;
 &lt;h2&gt;演習1：既存の属性を変更する&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;演習1既存の属性を変更する&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%e6%bc%94%e7%bf%921%e6%97%a2%e5%ad%98%e3%81%ae%e5%b1%9e%e6%80%a7%e3%82%92%e5%a4%89%e6%9b%b4%e3%81%99%e3%82%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;難易度：★&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;GetStartedApp&lt;/strong&gt; のグリッド線を見えないようにしてください。&lt;/p&gt;
@@ -1041,8 +1041,93 @@ public partial class MainWindow : Window
 &lt;/details&gt;
 &lt;details&gt;
 &lt;summary&gt;オプション：さらなる改善&lt;/summary&gt;
-&lt;p&gt;Celsius のボックスで、空の状態や「-」だけの入力を受け付けられるようにするには、コードビハインドを次のように変更します。&lt;/p&gt;
+&lt;p&gt;Celsius（摂氏）の入力欄で、空欄やマイナス記号（-）だけの入力も受け付けるようにするには、コードビハインドを次のように変更します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;MainWindow.axaml.cs&lt;/strong&gt; で、イベントハンドラー &lt;code&gt;private void Celsius_TextChanged&lt;/code&gt; を探します。空欄またはマイナス記号（-）だけの状態を受け付けるための &lt;code&gt;if&lt;/code&gt; 条件を追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;if (string.IsNullOrEmpty(Celsius.Text) || Celsius.Text == &amp;#34;-&amp;#34;)
+    {
+        Fahrenheit.Text = &amp;#34;&amp;#34;;
+    }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;元の double のパーサー部分を &lt;code&gt;else if&lt;/code&gt; から始まる条件に変更します。これが2番目の条件になります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;else if (double.TryParse(Celsius.Text, out double C))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;イベントハンドラーは、次のようになります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;private void Celsius_TextChanged(object? sender, RoutedEventArgs e)
+{
+    if (string.IsNullOrEmpty(Celsius.Text) || Celsius.Text == &amp;#34;-&amp;#34;)
+    {
+        Fahrenheit.Text = &amp;#34;&amp;#34;;
+    }
+    else if (double.TryParse(Celsius.Text, out double C))
+    {
+        var F = C * (9d / 5d) &amp;#43; 32;
+        Fahrenheit.Text = F.ToString(&amp;#34;0.0&amp;#34;);
+    }
+    else
+    {
+        Celsius.Text = &amp;#34;0&amp;#34;;
+        Fahrenheit.Text = &amp;#34;0&amp;#34;;
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;コードをコピー&#34;
+    aria-label=&#34;コードをコピー&#34;
+    data-copied-label=&#34;コピーしました！&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;アプリを実行し、摂氏の入力欄の内容をすべて削除したり、マイナス記号（-）だけを入力したりしても、入力欄が 0 に戻らないことを確認します。この状態では、華氏の入力欄には何も表示されません。&lt;br&gt;
+この変更により、途中で入力内容がリセットされることなく、負の数を入力できるようになります。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/details&gt;
+&lt;p&gt;お疲れさまでした！Avalonia の入門チュートリアルはこれで完了です。&lt;/p&gt;
+&lt;h2&gt;さらに詳しく学ぶ&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;さらに詳しく学ぶ&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e3%81%95%e3%82%89%e3%81%ab%e8%a9%b3%e3%81%97%e3%81%8f%e5%ad%a6%e3%81%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;このセクションへのパーマリンク&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;次のチュートリアルで &lt;a href=&#34;https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CompleteApps/SimpleToDoList&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ToDo リストアプリ&lt;/a&gt;を作ってみる&lt;/li&gt;
+&lt;li&gt;Avalonia の&lt;a href=&#34;https://docs.avaloniaui.net/docs/fundamentals/avalonia-xaml&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基本&lt;/a&gt;を学ぶ&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/docs/fundamentals/the-mvvm-pattern&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MVVM デザインパターン&lt;/a&gt;を理解する&lt;/li&gt;
+&lt;li&gt;UI の&lt;a href=&#34;https://docs.avaloniaui.net/docs/styling/styles&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;スタイル設定&lt;/a&gt;について学ぶ&lt;/li&gt;
+&lt;li&gt;Avalonia の&lt;a href=&#34;https://docs.avaloniaui.net/controls&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;コントロール一覧&lt;/a&gt;を見る&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.avaloniaui.net/api&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;API リファレンス&lt;/a&gt;を見る&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     
